@@ -1,0 +1,109 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ html {
+ 	font-size: 26.67vw;
+ }
+ a{
+ 	text-decoration: none;
+ }
+ img{
+ 	border: none;
+/* 	display: block;*/
+ }
+ nav {
+ 	height: 0.3rem;
+ 	font-size: 0px;
+ 	text-align: center;
+ 	line-height: 0.3rem;
+ 	display: flex;
+ 	justify-content: space-around;
+ }
+ nav a{
+ 	    font-size: 0.14rem;
+ 	    display: inline-block;
+ 	    color: black;
+ }
+ nav a:hover{
+ 	border-bottom: 1px solid red;
+ 	color: red;
+ }
+.banner{
+	height:1.5rem;
+	width: 100%;
+	background: url(../img/首页_02.gif);
+	background-size: cover;
+}
+section{
+	width: 100%;	
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.con_a p{
+	font-size: 0.14rem;
+}
+.con_a img{
+	width: 0.6rem;
+}
+.con_a {
+	width: 20%;
+	font-size: 0rem;
+	box-sizing: border-box;
+	margin: 0.1rem 0rem;
+	    text-align: center;
+}
+.img{
+	width: 100%;
+}
+.goods{
+	width: 100%;
+	display: flex;
+}
+.goods img{
+	width: 50%;
+}
+.goods p{
+	font-size: 0.14rem;
+	background-image: url(../img/15.png);
+	padding-left: 0.32rem;
+	background-repeat: no-repeat;
+	background-size: 0.3rem;
+	box-sizing: border-box;
+	display: inline-block;
+}
+.goods span{
+	color: gray;
+	font-size: 0.11rem;
+	display: inline-block;
+	margin-top: 0.3rem;
+}
+.news{
+	font-size: 0rem;
+	padding-left: 0.1rem;
+	box-sizing: border-box;
+}
+footer{
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	height: 0.4rem;
+	font-size: 0rem;
+	background-color: white;
+padding-top: 0.04rem;
+box-sizing: border-box;
+}
+footer a{
+	width: 20%;
+	text-align: center;
+	display: inline-block;
+	color: black;
+}
+footer p{
+	font-size: 0.12rem;
+}
+footer img{
+	width: 0.2rem;
+	height: 0.2rem;
+}

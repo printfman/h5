@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .img_a {
+            position: absolute;
+            bottom: 100px;
+            z-index: 1;
+            left: 0px;
+        }
+
+        .img_d {
+            position: absolute;
+            bottom: 100px;
+            z-index: 0;
+            right: 0px;
+        }
+
+        .img_b {
+            position: absolute;
+            bottom: 100px;
+            z-index: 2;
+            left: 621px;
+        }
+
+        .img_c {
+            position: absolute;
+            bottom: 100px;
+            z-index: 3;
+            left: -6px;
+        }
+
+        .img_e {
+            position: absolute;
+            bottom: 100px;
+            z-index: 1;
+            left: 487px;
+        }
+
+        .img_f {
+            position: absolute;
+            bottom: 219px;
+            z-index: 1;
+            left: 80px;
+        }
+
+        .img_g {
+            position: absolute;
+            bottom: 219px;
+            z-index: 0;
+            left: 367px;
+        }
+
+        .img_h {
+            position: absolute;
+            bottom: 314px;
+            z-index: 0;
+            left: 643px;
+        }
+
+        .img_i {
+            position: absolute;
+            bottom: 201px;
+            z-index: 0;
+            left: 922px;
+
+        }
+
+        .img_j {
+            position: absolute;
+            bottom: 219px;
+            z-index: 1;
+            left: 1032px;
+        }
+
+        .img_k {
+            position: absolute;
+            top: 100px;
+            z-index: 0;
+            left: 1020px;
+            animation: yun 15s linear 1s infinite;
+        }
+
+        .img_l {
+            position: absolute;
+            top: 100px;
+            z-index: 0;
+            left: 100px;
+            animation: yunb 15s linear 1s infinite;
+        }
+
+        .img_m {
+            position: absolute;
+            top: 50px;
+            z-index: 0;
+            left: 0px;
+            animation: qq 30s linear 1s infinite;
+        }
+
+        .blank {
+            background-color: white;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            animation: chuichui 15s linear 1s infinite;
+        }
+
+        @keyframes chuichui {
+            0% {
+                background-color: white;
+            }
+
+            50% {
+
+                background-color: rgb(119, 224, 243);
+            }
+            100% {
+                background-color: black;
+            }
+        }
+
+        @keyframes yun {
+            0% {
+                position: absolute;
+                left: 1020px;
+                opacity: 0.8;
+                top: 100px;
+            }
+
+            50% {
+                opacity: 1;
+                left: 800px;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes yunb {
+            0% {
+                position: absolute;
+                left: 100px;
+                opacity: 0.8;
+                top: 100px;
+            }
+
+            50% {
+                opacity: 1;
+                left: 500px;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes qq {
+            0% {
+                position: absolute;
+                left: 0px;
+                opacity: 0.8;
+                top: 5px;
+            }
+
+            50% {
+                opacity: 1;
+                left: 700px;
+                transform: rotate(45deg);
+            }
+
+            100% {
+                left: 1400px;
+                transform: rotate(10deg);
+            }
+        }
+        @keyframes ty {
+            0% {
+                transform: rotate(-15deg);
+            }
+
+            50% {
+                transform: rotate(-55deg);
+            }
+
+            100% {
+                left: 1400px;
+                transform: rotate(-375deg);
+            }
+            
+        }
+
+        .ty{
+            width:900px;
+            height: 900px;
+            position: relative;
+            margin: 0px auto;
+            transform: rotate(-15deg);
+            animation: ty 30s linear 1s infinite;
+        }
+        .ty .night{
+            width: 150px;
+    height: 150px;
+    border-radius: 50% 50%;
+    background-color:yellow;
+    position: absolute;
+    bottom: 200px;
+    right: 0px;
+    z-index: 0;
+        }
+        .ty .day{
+            width: 150px;
+            height: 150px;
+            border-radius: 50% 50%;
+            background-color:red;
+            position: absolute;
+           top: 0px;
+    left: 0px;
+    animation: ty2 30s linear 1s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blank">
+        <img src="images/groundBack.png" class="img_a">
+        <img src="images/groundBack.png" class="img_d">
+        <img src="images/groundFront.png" class="img_b">
+        <img src="images/groundMid.png" class="img_e">
+        <img src="images/groundFront.png" class="img_c">
+        <img src="images/dowEventCenter.png" class="img_f">
+        <img src="images/friendshipShell.png" class="img_g">
+        <img src="images/Glockenspiel.png" class="img_h">
+        <img src="images/beans.png" class="img_i">
+        <img src="images/Planetarium.png" class="img_j">
+        <img src="images/cloudLarge.png" class="img_k">
+        <img src="images/cloudMedium.png" class="img_l">
+        <img src="images/balloon.png" class="img_m">
+<div class="ty">
+    <div class="day"></div>
+    <div class="night"></div>
+</div>
+
+    </div>
+</body>
+
+</html>

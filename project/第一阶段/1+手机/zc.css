@@ -1,0 +1,83 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+header{
+    width: 100%;
+    margin: 0px auto;
+    display: flex;
+    padding:30px 200px;
+    border-bottom: 4px solid gainsboro;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+header>p{
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+main{
+margin-left: 500px;
+    margin-top:50px;
+}
+#number{
+    margin-right: 50px;
+}
+label{
+    font-size: 18px;
+}
+.xing{
+    color: red;
+}
+.p{
+    font-size: 18px;
+    margin: 20px 0px;
+    display: inline-block;
+    width: 123px;
+    text-align: right;
+    letter-spacing: 3px;
+}
+.pa input,.pc input{
+    height: 30px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.pa input{
+    background-image: url(img/15.png);
+}
+.pb input{
+    height: 30px;
+    width: 200px;
+}
+#yzm{
+    width: 150px;
+    background-color: gainsboro;
+    outline: none;
+    border: none;
+}
+.pc input{
+    background-image: url(img/16.png);
+}
+.zc,.login{
+    width: 130px;
+    height: 35px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+.login{
+    background-color: grey;
+    margin-left: 100px;
+}
+.ps{
+    margin-top: 50px;
+    color: gray;
+}
+.ps a{
+    color: red;
+    text-decoration: none;
+}

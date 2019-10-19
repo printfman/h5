@@ -1,0 +1,135 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+
+html {
+	font-size: 26.67vw;
+}
+
+.banner {
+	height: 4.5rem;
+	width: 100%;
+	background: url(../img/topban.jpg);
+	background-size: cover;
+	background-color: red;
+}
+
+.title {
+	font-size: 0.2rem;
+	font-weight: 600;
+	text-align: center;
+	padding-top: 0.3rem;
+	box-sizing: border-box;
+}
+
+.title span {
+	font-size: 0.2rem;
+	color: red;
+}
+
+.label {
+	text-align: center;
+	font-size: 0.14rem;
+	background-color: red;
+	color: white;
+	margin: 0.1rem 1.3rem;
+}
+
+.sun_title {
+	font-size: 0.8rem;
+	color: red;
+	text-align: center;
+}
+
+.pa {
+	font-size: 0.3rem;
+}
+
+.pb {
+	font-size: 0.6rem;
+	position: relative;
+	top: -0.1rem;
+}
+
+.pc {
+	background-color: rgb(251, 98, 114);
+	display: inline-block;
+	font-size: 0.2rem;
+	color: white;
+	width: 1.5rem;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	background-image: url(../img/e.png);
+	background-repeat: no-repeat;
+	background-size: 0.5rem;
+	padding-left: 0.4rem;
+	box-sizing: border-box;
+	background-position: 0.03rem 0.08rem;
+	position: relative;
+	top: -0.15rem;
+}
+
+.logo {
+    width: 1.8rem;
+    height: 1.54rem;
+    background-image: url(../img/jubao-icon.png);
+    background-position: 0rem -3.5rem;
+    background-size: 2.5rem;
+    position: absolute;
+    top: 3.5rem;
+    left: 1rem;
+}
+
+.pd {
+	font-size: 0.16rem;
+	color: green;
+	text-align: center;
+	font-weight: 600;
+}
+
+.pe {
+	font-size: 0.18rem;
+	color: red;
+	font-weight: 600;
+	text-align: center;
+	margin-top: 0.3rem;
+}
+
+.pe span {
+	font-size: 0.2rem;
+}
+.blank{
+	height: 1.2rem;
+	border-bottom: 1px gray dashed;
+}
+.ps{
+    font-size: 0.12rem;
+    color: gray;
+    position: absolute;
+    bottom: 0.9rem;
+    left: 1.3rem;
+    background-color: white;
+}
+footer{
+	background-color: rgb(213,0,48);
+	height: 0.5rem;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	font-size: 0px;
+}
+.last_p{
+	font-size: 0.12rem;
+	color: white;
+}
+.last_a{
+		width: 20%;
+		display: inline-block;
+		text-align: center;
+		padding-top: 0.05rem;
+		box-sizing: border-box;
+}

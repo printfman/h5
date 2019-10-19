@@ -1,0 +1,182 @@
+body,ul,ol,dl,dd,p,h1,h2,h3,h4,h5,h6,input,textarea,hr,div,em,strong{
+	margin:0;
+	padding:0;
+	font-size: 0px;
+}
+body{
+	font-family: "微软雅黑";
+}
+ul,ol{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	border: none;
+}
+html{
+    font-size: 26.7vw;
+}
+
+header{
+    display: flex;
+    width: 100%;
+    height: 0.5rem;
+    background-color: rgb(255, 102, 51);
+    font-size: 0px;
+    align-items: center;
+}
+header span{
+    font-size: 0.16rem;
+    color: white;
+    margin: 0rem 0.05rem;
+}
+header .img_a{
+    width: 0.17rem;
+    height: 0.17rem;
+    margin: 0rem 0.05rem;
+}
+header .img_b{
+    width: 0.3rem;
+    height: 0.3rem;
+}
+header input{
+    border-radius: 0.15rem;
+    height: 0.3rem;
+    width: 2.5rem;
+    border: none;
+    margin: 0rem 0.05rem;
+}
+nav{
+    font-size: 0rem;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+nav span{
+    font-size: 0.16rem;
+    color: black;
+}
+nav a{
+    display: inline-block;
+    width: 17%;
+    text-align: center;
+    margin-top: 0.1rem;
+}
+nav span{
+    font-size: 0.14rem;
+}
+nav a img{
+    width:80%;
+}
+section{
+    font-size: 0px;
+    display: flex;
+    margin-top: 0.25rem;
+    border-top: 0.01rem gainsboro solid;
+    padding: 0.1rem 0rem; 
+}
+section span{
+    font-size: 0.16rem;
+}
+section .img_a{
+    width: 0.7rem;
+    height:0.6rem;
+}
+section .img_b{
+    width: 0.6rem;
+    height:0.6rem;
+    margin-right: 0.15rem;
+}
+.banner{
+    width: 100%;
+    background: url(../images/首页_34.gif) no-repeat;
+    background-size:contain;
+    height: 0.8rem;
+}
+main{
+    font-size: 0rem;
+    display: flex;
+    width: 100%;
+    height: 1rem;
+    justify-content: space-between;
+}
+ .p{
+    width: 39%;
+    height: 1rem;
+    display: flex;
+    flex-direction: column;
+   /* padding: 0.1rem 0.1rem; */
+   box-sizing: border-box;
+   border: 0.01rem gainsboro solid;
+
+   padding-left: 0.1rem;
+    /* font-size: 0rem; */
+}
+.pa{
+    padding-top: 0.1rem;
+    box-sizing: border-box;
+    font-size: 0.16rem;
+    color: rgb(156, 143, 129)
+}
+.pb{
+    font-size: 0.14rem;
+    font-weight: 700;
+    padding: 0.05rem 0rem;
+    box-sizing: border-box;
+   
+}
+.pc{
+    width: 80%;
+    text-align: center;
+    font-size: 0.05rem;
+    border: 0.01rem solid rgb(95, 47, 47);
+    border-radius: 0.15rem;
+    color: rgb(155, 45, 45);
+}
+main .img{
+    width: 20%;
+    height: 1rem;
+    background-image: url(../images/首页_39.gif);
+    background-size: cover;
+}
+.main_b{
+    margin-top: 0.2rem;
+    width: 100%;
+    display: flex;
+    font-size: 0rem;
+}
+.main_b .bgimg{
+    width: 40%;
+    height: 1rem;
+}
+.img_c{
+    width: 20%;
+    height: 1rem;
+    background-image: url(../images/首页_42.gif);
+    background-size: cover;
+}
+footer{
+    width: 100%;
+    height: 0.5rem;
+    display: flex;
+    font-size: 0rem;
+    justify-content: space-around;
+    background-color: rgb(240, 240, 240)
+}
+footer a{
+    display: inline-block;
+    width: 20%;
+    height: 0.5rem;
+    text-align: center;
+}
+footer img{
+    width: 80%;
+    height:70%;
+}
+footer span{
+    font-size: 0.12rem;
+    color: black;
+}

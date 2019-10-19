@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 300px;
+				height: 500px;
+				margin: 0px auto;
+				border: 3px solid gray;
+				position: relative;
+				border-radius: 10px;
+			}
+			#header{
+				height:40px;
+				background-color: gray;
+				text-align: center;
+				line-height: 40px;
+			}
+			#footer{
+				height:25px;
+				width: 300px;
+				background-color: gray;
+				position: absolute;
+				bottom: 0px;
+			}
+			#footer input{
+				width: 230px;
+				height:19px;
+				border-radius: 10px;
+				outline: none;
+			}
+			#footer button{
+				width: 50px;
+				border:3px gray solid;
+				background-color: gray;
+				color: white;
+				outline: none;
+				cursor: pointer;
+			}
+			.content{
+				overflow: auto;
+				height: 450px;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="header">
+				<span>客服</span>
+			</div>
+			<div class="content">
+				
+			</div>
+			<div id="footer">
+				<input type="text">
+				<button>发送</button>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	let oBtn=document.querySelector("button");
+	let oTxt=document.querySelector("input");
+	let oC=document.querySelector(".content");
+	function send(){
+		let oP=document.createElement("p");		
+		oP.innerHTML+=oTxt.value+"<br/>";
+		oC.appendChild(oP);
+		oP.style.textAlign="right";	
+		let xhr=new XMLHttpRequest();
+		xhr.open("post","window.php?txt="+oTxt.value,true);
+		xhr.onreadystatechange=function(){
+			if(xhr.status==200&&xhr.readyState==4){
+				fun(xhr.responseText);
+			}
+		}		
+		xhr.send();		
+	}
+	oBtn.onclick=send;
+
+	function fun(str){
+		let oP=document.createElement("p");		
+		oP.innerHTML+=str+"<br/>";
+		oP.style.display="inline-block";
+		oP.style.backgroundColor="skyblue";
+		oP.style.borderRadius="20px";
+		oP.style.padding="10px";
+		oC.appendChild(oP);
+		oP.style.textAlign="left";
+		oTxt.value="";
+	}
+</script>
