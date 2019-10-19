@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//又是丧丧的一天,想去的地方去不了,想见的人见不到,我要嚣张,嚣张到支离破碎
+	// 存:
+	let ls=localStorage;
+	ls.name="bob";
+	ls["age"]=18;
+	ls.setItem("data",'{"name":"bob","age":20}');
+// 	let s=sessionStorage;
+// 	s.sex="男";
+// 	//取:
+// 	console.log(ls.name);
+// 	console.log(ls["age"]);
+// 	console.log(ls.getItem("data"));
+// 	
+// 	let arr=JSON.parse(ls.getItem("data"));
+// 	for(let i in arr){
+// 		console.log(arr[i]);
+// 	}
+	//改
+	ls.name="Alice";
+	//查
+	for(let i=0;i<ls.length;i++){
+		console.log(ls.key(i));//获取key值
+		console.log(ls.getItem(ls.key(i)));
+	}
+	//若牵挂的人只存在于回忆中,才是彻头彻尾的失败
+	//花如盛世绽放,以人心培育
+	//卦象说:你会被抛弃三次
+	//诺,这是我算过的最烂的八字
+	//长安和亲人,该选哪一个
+	//卦象说:背叛,不会是最后一次
+	//最后一次失约
+	//永恒和刹那间,只隔着我的剑
+	//删除
+	ls.removeItem("name");
+	ls.clear();
+</script>

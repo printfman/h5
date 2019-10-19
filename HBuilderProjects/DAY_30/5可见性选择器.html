@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<table>
+		    <tr style="display:none">
+		        <td>Value 1</td>
+		    </tr>
+		    <tr>
+		        <td>Value 2</td>
+		    </tr>
+		</table>
+	</body>
+</html>
+<script src="jQuery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		$("tr:hidden").css({background:"blue"});
+		
+		$("tr:visible").css({background:"pink"});
+	})
+</script>

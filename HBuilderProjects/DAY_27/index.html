@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	function Animal(Age){
+		this.age=Age;
+	}
+	Animal.prototype.eat=function(){
+			console.log("eat");
+			}
+			
+	function Person(Name){
+		this.name=Name;
+	}
+	function Student(Id){
+		this.id=Id;
+	}
+	Person.prototype=new Animal("18");
+	Student.prototype=new Person("小明");
+	Person.prototype.sleep=function(){
+			console.log("sleep");
+		}
+	Student.prototype.study=function(){
+			console.log("study");
+		}
+	let a=new Person("xiao");
+	console.log(a.age);
+	a.sleep();
+	
+	console.log(a instanceof Person);
+	console.log(a instanceof Animal);
+</script>

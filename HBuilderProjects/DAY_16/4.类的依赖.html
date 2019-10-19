@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	class Car{
+		constructor(Speed) {
+		    this.speed=Speed;
+		}
+		time(road){
+			let time=road.s/this.speed;
+			return time;
+		}
+	}
+	class Road{
+		constructor(S) {
+		    this.s=S;
+		}
+	}
+	let road=new Road(1000);
+	let car=new Car(60);
+	console.log(car.time(road));
+	
+</script>

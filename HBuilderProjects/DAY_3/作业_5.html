@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+// 	5.篮球从5米高的地方掉下来，每次弹起的高度是原来的30%，经过几次弹起，
+//   篮球的高度小于0.1米。
+var height=5;
+var heightNew=0;
+var count=0;
+while(true){
+	heightNew=height*0.3;
+	height=heightNew;
+	count+=1;
+	if(heightNew<0.1){
+			break;
+		}		
+}
+document.write(count);
+</script>

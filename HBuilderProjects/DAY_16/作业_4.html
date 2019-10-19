@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// 4.有一个圆类，半径为r。创建半径为5的圆对象。打印圆的面积和周长。
+	
+	//es6
+	const PI=3.14;
+	class Circle{		
+		constructor(R) {
+		    this.r=R;
+		}
+		area(){
+			
+			return "面积为"+PI*this.r*this.r;
+		}
+		length(){
+			return "周长为"+2*this.r*PI;
+		}
+	}
+	
+	let circle=new Circle(1);
+	console.log(circle.area(),circle.length());
+	
+	//构造方法-----------------------------------------------------------------
+	
+// 	const PI=3.14;
+// 	function Circle(R){		
+// 		
+// 		this.r=R;
+// 		
+// 		this.area=function(){
+// 			
+// 			return "面积为"+PI*this.r*this.r;
+// 		}
+// 		this.length=function(){
+// 			return "周长为"+2*this.r*PI;
+// 		}
+// 	}
+// 	
+// 	let circle=new Circle(1);
+// 	console.log(circle.area(),circle.length());
+</script>

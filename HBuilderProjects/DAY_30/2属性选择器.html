@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box">111</div>
+		<div id="box">222</div>
+		<div class="main" id="mask">333</div>
+	</body>
+</html>
+<script src="jQuery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		$("div[id]").css({background:"green"});
+		
+		$("div[class][id]").css({background:"pink"});
+		
+		$("div[id=mask]").css({background:"skyblue"});
+		
+		$("div[class]").css({background:"grey"});
+	});
+</script>

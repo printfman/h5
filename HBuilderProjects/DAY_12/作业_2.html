@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#box{
+				width: 800px;
+				height: 600px;
+				position: absolute;
+				background-color: gainsboro;
+				text-align: right;
+				cursor: move;
+			}
+			button{
+				background-color: white;
+				border: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<button>max</button>
+			<button>min</button>
+		</div>
+	</body>
+</html>
+<script>
+	var oBox=document.querySelector("#box");
+
+
+	oBox.onmousedown=function(evt){
+		var e=evt||event;
+		var offsetx=e.offsetX;
+		var offsety=e.offsetY;
+		document.onmousemove=function(evt){
+			var e=evt||event;
+			var x=e.pageX-offsetx;
+			var y=e.pageY-offsety;
+			if(x<0){
+				x=0;
+			}
+			if(y<0){
+				y=0;
+			}
+			var xr=window.innerWidth-oBox.offsetWidth;
+			var yr=window.innerHeight-oBox.offsetHeight;
+			if(x>xr){
+				x=xr;
+			}
+			if(y>yr){
+				y=yr;
+			}
+			oBox.style.left=x+"px";
+			oBox.style.top=y+"px";
+		}
+		document.onmouseup=function(){
+			document.onmousemove=null;
+		}
+	}
+	var oBtn1=oBox.firstElementChild;
+	var oBtn2=oBox.firstElementChild.nextElementSibling;
+	oBtn1.onclick=function(){
+		oBox.style.width=window.innerWidth+"px";
+		oBox.style.height=window.innerHeight+"px";
+		oBox.style.top="0px";
+		oBox.style.left="0px";
+	}
+	oBtn2.onclick=function(){
+		oBox.style.width="";
+		oBox.style.height="";
+		
+	}
+</script>

@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>综合表单验证</title>
+<style type="text/css">
+	#tin{
+		margin-left:10px;
+		font-size:12px;
+	}
+	#tip1{
+		width:130px;
+		height:18px;
+		/*background:#ddd;*/
+		border-radius:3px;
+		margin-left:10px;
+		font-size:14px;
+		font-weight:bold;
+		text-align:center;
+		display:inline-block;
+		}
+	span{
+		font-size:14px;
+	}
+</style>
+</head>
+<body>
+<form action="#" method="get"  id="myForm">
+	<table width="449" height="530" border="1" align='center'>
+	  <tr>
+		<td colspan="2" align="center">用户名注册</td>
+		</tr>
+	  <tr>
+		<td width="116" align="right">姓名：</td>
+		<td width="323"><label>
+		  <input type="text" name="" id="name" /><span></span>
+		</label> <span id="tin"></span></td>
+	  </tr>
+	  <tr>
+		<td width="116" align="right">性别：</td>
+		<td width="323"><label id="sexf">
+		  <input type="radio" name="sex"/>男
+		   <input type="radio" name="sex" />女<span></span>
+		</label><span id="tisex"></span></td>
+	  </tr>
+	  <tr>
+		<td align="right">年龄：</td>
+		<td><label>
+		  <input type="text" name="" id="age" /><span></span>
+		</label> <span id="tia"></span></td>
+	  </tr>
+	  <tr>
+		<td align="right">密码：</td>
+		<td><label>
+		  <input type="password" name="" id="pwd" /><span></span>
+		</label> <span id="tip1"></span></td>
+	  </tr>
+	  <tr>
+		<td align="right">确认密码：</td>
+		<td><label>
+		  <input type="password" name="" id="qpwd" /><span></span>
+		</label><span id="tip2"></span></td>
+	  </tr>
+	  <tr>
+		<td align="right">手机：</td>
+		<td><label>
+		  <input type="text" name="" id="tel" /><span></span>
+		</label> <span id="tit"></span></td>
+	  </tr>
+	  <tr>
+		<td align="right">QQ:</td>
+		<td><label>
+		  <input type="text" name="" id="qq" /><span></span>
+		</label><span id="tiq"></span></td>
+	  </tr>
+	  <tr>
+		<td align="right">邮箱：</td>
+		<td><label>
+		  <input type="text" name="" id="email" /><span></span>
+		</label><span id="tiem"></span></td></td>
+	  </tr>
+	  <tr>
+		<td align="right">邮编：</td>
+		<td><label>
+		  <input type="text" name="" id="eml" /><span></span>
+		</label><span id="tiec"></span></td></td>
+	  </tr>
+	  <tr>
+		<td align="right">身份证：</td>
+		<td><label>
+		  <input type="text" name="" id="sname" /><span></span>
+		</label><span id="tisn"></span></td>
+	  </tr>
+	  <tr>
+		<td align="right">验证码：</td>
+		<td><label>
+		  <input type="text" id="yCode" />
+		  <span style="width:80px;height: 20px;border: 1px solid red;display: inline-block;" id="sCode"></span>
+		  <a href="#" onclick="randomCode()">看不清</a>
+		</label></td>
+	  </tr>
+		<tr>
+		<td align="right">爱好：</td>
+		<td><label id="tHabby">
+		<input type="checkbox" name="a" id="c1">
+		足球
+		<input type="checkbox" name="a" id="c2">
+		篮球
+		<input type="checkbox" name="a" id="c3">
+		排球
+		<input type="checkbox" name="a" id="c4">
+		网球
+		</label><span id="tihab"></span></td>
+	  </tr>
+	  <tr>
+		<td height="36" colspan="2" align="center"><label>
+		  <input type="submit" value="注册"  />
+		</label></td>
+		</tr>
+	</table>
+</form>	
+</body>
+</html>
+<script type="text/javascript">
+	var oTxt=document.getElementsByTagName("input");
+	var oP=document.getElementsByTagName("span");
+	var oRadio=document.getElementsByTagName("sex");
+	var oForm=document.querySelector("form");
+	var count;
+	oForm.onsubmit=function(){
+		if(oRadio[0].checked==false&&oRadio[1].checked==false){
+			alert("年龄未选择");
+		}
+	}
+	oTxt[0].onblur=function(){
+		var reg=/^\D[A-Za-z]{5,9}$/;
+
+		if(!reg.test(oTxt[0].value)){
+			oP[0].innerHTML="单词字符组成6-10为不能用数字开头";
+			oP[0].style.color="red";
+ 		}else{
+			oP[0].innerHTML="";
+		}
+	}
+		oTxt[3].onblur=function(){
+			var reg=/^[1-9][0-9]{0,2}$/;
+				if(!reg.test(oTxt[3].value)){
+				oP[4].innerHTML="请输入有效年龄";
+				oP[4].style.color="red";
+			}
+			else{
+				oP[4].innerHTML="";
+			}
+		}
+		
+		oTxt[4].onblur=function(){
+			var regNum=/^\d{6,18}$/;
+			var regChar=/^[a-zA-Z]{6,18}$/;
+			var regother=/^[!@#$%^&*]{6,18}$/;
+			var txt=oTxt[4].value;
+			var _regNum=/\d/;
+			var _regChar=/[a-zA-Z]/;
+			var _regother=/[!@#$%^&*]/;
+				oP[6].style.color="red";
+				if(regNum.test(oTxt[4].value)||regChar.test(oTxt[4].value)||regother.test(oTxt[4].value)){
+					oP[6].innerHTML="弱";
+				}else if(_regNum.test(oTxt[4].value)&&_regChar.test(oTxt[4].value)&&_regother.test(oTxt[4].value)){
+					oP[6].innerHTML="强";
+				}else if(oTxt[4].value==""){
+					oP[6].innerHTML="密码不能为空";
+				}else if(txt.length<6){
+					oP[6].innerHTML="密码最少六位";
+				}else{
+					oP[6].innerHTML="中";
+				}
+			
+		}
+		oTxt[5].onblur=function(){
+			var reg=/^1[538]\d{9}$/;
+				if(oTxt[5].value!=oTxt[4].value){
+				oP[8].innerHTML="密码不一致";
+				oP[8].style.color="red";
+		}else{
+			oP[8].innerHTML="";
+		}
+	}
+		oTxt[6].onblur=function(){
+			var reg=/^1[538]\d{9}$/;
+				if(!reg.test(oTxt[6].value)){
+				oP[10].innerHTML="请输入有效号码";
+				oP[10].style.color="red";
+			}else{
+				oP[10].innerHTML="";
+			}
+		}
+		oTxt[7].onblur=function(){
+			var reg=/^[1-9]\d{4,11}$/;
+				if(!reg.test(oTxt[7].value)){
+				oP[12].innerHTML="请输入有效qq";
+				oP[12].style.color="red";
+			}else{
+				oP[12].innerHTML="";
+			}
+		}
+		oTxt[8].onblur=function(){
+			var reg=/@qq\.com/;
+				if(!reg.test(oTxt[8].value)){
+				oP[14].innerHTML="请输入有效邮箱";
+				oP[14].style.color="red";
+			}else{
+				oP[14].innerHTML="";
+			}
+		}
+		oTxt[9].onblur=function(){
+		var reg=/^\d{6}$/;
+			if(!reg.test(oTxt[9].value)){
+			oP[16].innerHTML="请输入6位数字";
+			oP[16].style.color="red";
+		}else{
+			oP[16].innerHTML="";
+		}
+	}	
+		oTxt[10].onblur=function(){
+		var reg=/^\d{17}(x|\d|X)$/;
+			if(!reg.test(oTxt[10].value)){
+			oP[18].innerHTML="请输入有效身份证";
+			oP[18].style.color="red";
+		}else{
+			oP[18].innerHTML="";
+		}
+	}	
+	var oScode=document.getElementById("sCode");
+	oScode.innerHTML=Math.floor(Math.random()*10000);
+	function randomCode(){
+		oScode.innerHTML=Math.floor(Math.random()*10000);
+	}
+	
+		oTxt[11].onblur=function(){
+		if(oTxt[11].value!=oScode.innerHTML)
+		{
+			alert("验证码错误");
+		}
+	}	
+	
+</script>
+
+<!-- 
+	 要求：
+	 	1、使用失去焦点事件完成表单验证  每一项验证失去焦点时都可以即时验证
+	 	2、姓名： 单词字符组成  6-10为 ，不能用数字开头
+	 	      年龄： 只能由数字组成  年龄不能为负数
+	 	      密码：6-18位字符组成       有密码强弱验证 
+	 	3、确认密码和密码相同
+	 	4、手机号： 15  13  18 开头
+	 	5、qq ： 5-12位数字  第一位不能是0
+	 	6、邮箱： 必须有@符号
+	 	7、邮编：6为数字
+	 	8、身份证： 18位   最后一位考虑有x
+	 	9、验证码  
+	 		输入的验证码必须和红色框中的相同，  点击看不清可以实现验证码的切换
+	 		验证码由字母  数字组成
+	 	10、爱好和性别必选	 -->

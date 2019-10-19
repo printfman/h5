@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//求100-999之间的水仙花数
+for(var i=100;i<=999;i++){
+	var a=parseInt(i%10);
+	var b=parseInt(i%100/10);
+	var c=parseInt(i/100);
+	if(a*a*a+b*b*b+c*c*c==i){
+		console.log(i);
+	}
+}	
+
+</script>

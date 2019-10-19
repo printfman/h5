@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+// 	console.log(window);
+// 	console.log(document);
+// 	console.log(location);
+
+document.ondblclick=function(){
+	alert(event);
+}
+
+//事件兼容写法
+	
+document.onclick=function(evt){
+	var e=evt||event;
+	console.log(e);
+}
+</script>

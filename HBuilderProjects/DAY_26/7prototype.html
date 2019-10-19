@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+// 	function Student(Id,Name){
+// 		this.Id=id;
+// 		this.Name=name;
+// 		this.eat=function(){
+// 			console.log("喝水水");
+// 		}
+// 	}
+	
+	function Student(Id,Id){
+			this.id=Id;
+			this.name=Id;
+		}
+	Student.prototype.eat=function(){
+		console.log("吃饭饭");
+	}
+	Student.prototype.tall="180";
+	let bob=new Student("007","bob");
+	bob.eat();
+	console.log(bob.tall);
+	
+	bob.tall="168";
+	console.log(bob.tall);
+	delete bob.tall;
+	console.log(bob.tall);
+	
+	
+	let arr=[1,3,5,2,8,3,1];
+	Array.prototype.max=function(){
+		let max=this[0];
+		for(let i=0;i<this.length;i++){
+			if(max<this[i]){
+				max=this[i];
+			}
+		}return max;
+	}
+	console.log(arr.max());
+</script>

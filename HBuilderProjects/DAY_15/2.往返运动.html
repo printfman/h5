@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#box{
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				position: absolute;
+				left: 200px;
+				background-color: cadetblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<button onclick="go(800)">GO</button>
+		<button onclick="go(0)">Back</button>
+	</body>
+</html>
+<script>
+	var oBox=document.querySelector("#box");
+	var time;
+	function go(targrt){
+		clearInterval(time);
+		time=setInterval(function(){
+			var speed=targrt>oBox.offsetLeft?5:-5;
+			oBox.style.left=oBox.offsetLeft+speed+"px";
+			if(oBox.offsetLeft>=800||oBox.offsetLeft<=0){
+				clearInterval(time);
+			}
+		},50);
+	}
+	
+	
+</script>

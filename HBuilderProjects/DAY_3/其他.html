@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// 1. 输出100-200之间所有的素数(素数:只能被1和自己本身整除的数) (尽力)
+// 	for(var i=100;i<=200;i++){
+// 		for(var j=2;j<i;i++){
+// 			if(i%2==0){
+// 				break;
+// 			}
+// 			console.log(i);
+// 		}
+// 		
+// 	}
+
+	// 2. 求出1-1/2+1/3-1/4…..1/20的和  
+// 	var a=-1,b=0,sum=0,x=0;
+// 	for(var i=0;i<=20;i++){
+// 		a*=-1;//分子
+// 		b+=1;//分母
+// 		x=a/b;//通式
+// 		console.log(a,b);
+// 		sum+=x;
+// 	}
+// 	document.write(sum);
+
+// 3.一个球从100米的高度落下，每次落地后反跳回原高度的一半，在落下，在反弹。
+// 求他在第10次落地时，共经过多少米？第十次反弹多高？
+// var height=100;
+// var count=100;
+// for(var i=0;i<9;i++){	
+// 	height=height/2;
+// 	count+=height*2;
+// }
+// document.write("第十次反弹后高度为"+height+"<br>"+"共经过"+count+"米");
+
+// 4.有一个棋盘，有64个方格，在第一个方格里面放1粒芝麻重量是0.00001kg，
+//   第二个里面放2粒，第三个里面放4，棋盘上放的所有芝麻的重量
+// var weight=1,sum=0,i=1,j=1;
+// for(var i=0;i<64;i++){
+// 	sum+=weight*j;
+// 	j++;
+// }
+// console.log(sum);
+// 5.输出以下图形   （扩展：尽能力去做）
+//      *
+//     ***
+//    *****
+//   *******
+//    *****
+//     ***
+//      *
+for(var i=0;i<4;i++){
+	for(var j=1;j<=2*i+1;j++){
+		document.write("*");
+		
+	}
+	document.write("<br>");
+}
+for(var i=3;i>=0;i--){
+	for(var j=1;j<=2*i-1;j++){
+		document.write("*");
+	}
+	document.write("<br>");
+}
+
+</script>

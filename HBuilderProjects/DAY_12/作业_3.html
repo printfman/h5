@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		请选择你的爱好<br>
+		<input type="checkbox" name="hobby">全选/全不选<br>
+		<input type="checkbox" name="hobby">打篮球
+		<input type="checkbox" name="hobby">踢足球
+		<input type="checkbox" name="hobby">唱歌
+		<input type="checkbox" name="hobby">跳舞
+		<input type="checkbox" name="hobby">书画<br>
+		<button>全选</button>
+		<button>全不选</button>
+		<button>反选</button>
+	</body>
+</html>
+<script>
+	var all=document.body.firstElementChild.nextElementSibling;
+	var allItem=document.getElementsByTagName("input");
+	var allBtn=document.getElementsByTagName("button");
+	//全选/全不选
+	all.onclick=function(){
+		for(var i=1;i<allItem.length;i++){
+			allItem[i].checked="checked";
+		}
+		if(all.checked==false){
+			for(var i=1;i<allItem.length;i++){
+				allItem[i].checked=false;
+			}
+		}
+		
+	}
+	//全选
+	allBtn[0].onclick=function(){
+		for(var i=1;i<allItem.length;i++){
+			allItem[i].checked="checked";
+		}
+	}
+	//全不选
+	allBtn[1].onclick=function(){
+		for(var i=0;i<allItem.length;i++){
+			allItem[i].checked="";
+		}
+		
+	}
+	//反选
+	allBtn[2].onclick=function(){
+		all.checked="";
+		for(var i=1;i<allItem.length;i++){
+			console.log(allItem[i].checked);
+			if(allItem[i].checked==true){
+				allItem[i].checked=false;
+			}
+			else{
+				allItem[i].checked="checked";
+			}
+		}
+		
+	}
+
+</script>

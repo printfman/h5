@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="click" onclick="f()">
+		
+		<ul>
+			<li>111</li>
+			<li>22</li>
+			<li>44</li>
+			<li>55</li>
+			<li>66</li>
+			<li>77</li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript">
+	//闭包
+// 	var f=(function fun(){
+// 		var t=0;
+// 		function fun1(){
+// 			console.log(t++);
+// 		}
+// 		return fun1;
+// 	})();
+	
+	let oLi=document.getElementsByTagName("li");
+	for(let i=0;i<oLi.length;i++){
+		oLi[i].onclick=function(){
+			console.log(oLi[i].innerHTML);
+		}
+	}
+	
+// 	for(var i=0;i<oLi.length;i++){
+// 		(function (x){
+// 			oLi[x].onclick=function(){
+// 				console.log(oLi[x].innerHTML);
+// 			}
+// 		}(i));
+// 	}
+
+
+// 	function mult(i){
+// 		return function(j){
+// 			return function(k){
+// 				return i*j*k;
+// 			}
+// 		}
+// 	}
+	
+	// console.log(mult(5)(5)(1));
+
+</script>

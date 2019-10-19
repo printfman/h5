@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//若能避开所有猛烈地欢喜,自然也不会有悲伤的来袭
+	//所以说，有话语权的人在叫拥有生活,更不用承担期待后的落寞,因为从不需要依靠
+	//生活不只有眼前的苟且,还有未来的苟且
+	
+	let singletion={
+		id:18,
+		name:"小明",
+		eat:function(){
+			console.log("美食不可辜负");
+		}
+	}
+	let s1=singletion;
+	let s2=singletion;//两者等于同一个对象
+	console.log(s1===s2);
+	
+	function Student(Name,Age){
+		var unique;
+		if(Student.unique== undefined){
+			this.name=Name;
+			this.age=Age
+			Student.unique=this;
+		}else{
+			return Student.unique;
+		}
+	}
+	let m1=new Student("魏克勋",8);
+	let m2=new Student("李颖科",10);
+	console.log(m1===m2);
+	
+	
+// 	let single = (function(Id,Name){
+// 		var temp;
+// 		function Student(a,b){
+// 			this.id=a;
+// 			this.name=b;
+// 		}
+// 		if(temp == undefined){
+// 			temp=new Student(Id,Name);
+// 		}
+// 		return function(){
+// 			return temp;
+// 		}
+// 	}(666,"哈哈"));
+// 	
+// 	let o1=single();
+// 	let o2=single();
+// 	console.log(o1===o2);
+
+
+let single=(function(Name,Id){
+	var temp;
+	function Student(a,b){
+		this.name=a;
+		this.age=Id;
+	}
+	if(temp == undefined){
+		temp = new Student(Name,Id)
+	}
+	return function(){
+		return temp;
+	}
+}(12,"小明"));
+
+let o1=single();
+let o2=single();
+console.log(o1===o2);
+</script>

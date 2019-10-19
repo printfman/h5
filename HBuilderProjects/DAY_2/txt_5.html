@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+// 	5.已知银行整存整取存款不同期限的月息利率分别为：
+// 月息利率＝
+// 0.63% 期限=1年
+// 0.66% 期限=2年
+// 0.69% 期限=3年
+// 0.75% 期限=5年
+// 0.84% 期限=8年
+// 输入存款的本金和年限，求到期时能从银行得到的利息与本金的合计。（利息的计算公式为：利息＝本金×月息利率×12×存款年限。(switch和else-if任选其一)
+
+var cash=10000;//本金
+var year=1;//年数
+var Interest;//利息
+if(year==1){
+		Interest=0.63/100;
+	}else if(year==2){
+		Interest=0.66/100;
+	}else if(year==3){
+		Interest=0.69/100;
+	}else if(year==5){
+		Interest=0.75/100;
+	}else if(year==8){
+		Interest=0.84/100;
+	}
+	cash+=cash*Interest*12*year;
+	document.write(cash);
+</script>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			span{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<p>1.只能用数字开头，长度在6-18位之间</p>
+		<input type="text"><span></span>
+		<p>2.以字母开头，数字结尾，中间任意一个字符</p>
+		<input type="text"><span></span>
+		<p>3.密码不能少于6位的字符</p>
+		<input type="text"><span></span>
+		<p>4.以a开头   b字符至少出现2个，至多出现6个</p>
+		<input type="text"><span></span>
+		<p>5.变量的命名正则表达式(不能用数字开头 由字母、数字、下划线 、$组成)</p>
+		<input type="text"><span></span>
+		<p>6.以010开头的座机号(后面是8位数字)</p>
+		<input type="text"><span></span>
+		<p>7.手机号以13开头，以8结尾</p>
+		<input type="text"><span></span>
+		<p>8.密码只能用6个</p>
+		<input type="text"><span></span>
+		<p>9.第一位是数字，第二位是A或a，后面至多出现6个字符</p>
+		<input type="text"><span></span>
+		<p>10.第一位是数字，第二位是任意一个字符,后面只能由字母、数字、下划线组成，共8位</p>
+		<input type="text"><span></span>
+		<p>11.写出中国人姓名正则    2--4个中文</p>
+		<input type="text"><span></span>
+		<p>12写一个qq号的正则，至少5位  至多12位数字</p>
+		<input type="text"><span></span>
+		<p>13邮编检验 共6位数字 第一位不能是0</p>  
+		<input type="text"><span></span>
+		<p>14检验压缩包  xxx.zip或xxx.rar或xxx.tar 三个格式</p>
+		<input type="text"><span></span>
+		<p>15电子邮件 (@符号前后使用单词字符即可)   232323@qq.com</p>
+		<input type="text"><span></span>
+		<p>16手机号 1 3|5|8|7</p>  
+		<input type="text"><span></span>
+		<p>17身份证 （18位  考虑最后一位可能为x）</p>
+		<input type="text"><span></span>
+		<p>18账户名只能使用数字字母下划线，不能数字开头，长度在6--18之间</p>   
+		<input type="text"><span></span>
+	</body>
+</html>
+<script>
+var oTxt=document.getElementsByTagName("input");
+var oP=document.getElementsByTagName("span");
+oTxt[0].onblur=function(){
+	var reg=/^\d{6,18}$/;
+	if(reg.test(oTxt[0].value)){
+		oP[0].innerHTML="正确";
+	}else{
+		oP[0].innerHTML="错误";
+	}
+}
+
+// 以字母开头，数字结尾，中间任意一个字符
+
+oTxt[1].onblur=function(){
+	var reg=/^[a-zA-Z].\d$/;
+	if(reg.test(oTxt[1].value)){
+		oP[1].innerHTML="正确";
+	}else{
+		oP[1].innerHTML="错误";
+	}
+}
+// 密码不能少于6位的字符
+oTxt[2].onblur=function(){
+	var reg=/^.{6,}$/;
+	if(reg.test(oTxt[2].value)){
+		oP[2].innerHTML="正确";
+	}else{
+		oP[2].innerHTML="错误";
+	}
+}
+// 以a开头   b字符至少出现2个，至多出现6个
+oTxt[3].onblur=function(){
+	var reg=/^ab{2,6}$/;
+	if(reg.test(oTxt[3].value)){
+		oP[3].innerHTML="正确";
+	}else{
+		oP[3].innerHTML="错误";
+	}
+}
+// 变量的命名正则表达式(不能用数字开头 由字母、数字、下划线 、$组成)
+oTxt[4].onblur=function(){
+	var reg=/^\D\w{0,}$/;
+	if(reg.test(oTxt[4].value)){
+		oP[4].innerHTML="正确";
+	}else{
+		oP[4].innerHTML="错误";
+	}
+}
+// 以010开头的座机号(后面是8位数字)
+oTxt[5].onblur=function(){
+	var reg=/^010\d{5}$/;
+	if(reg.test(oTxt[5].value)){
+		oP[5].innerHTML="正确";
+	}else{
+		oP[5].innerHTML="错误";
+	}
+}
+// 手机号以13开头，以8结尾
+oTxt[6].onblur=function(){
+	var reg=/^13.{8}8$/;
+	if(reg.test(oTxt[6].value)){
+		oP[6].innerHTML="正确";
+	}else{
+		oP[6].innerHTML="错误";
+	}
+}
+// 密码只能用6个
+oTxt[7].onblur=function(){
+	var reg=/^.{6}$/;
+	if(reg.test(oTxt[7].value)){
+		oP[7].innerHTML="正确";
+	}else{
+		oP[7].innerHTML="错误";
+	}
+}
+// 第一位是数字，第二位是A或a，后面至多出现6个字符
+oTxt[8].onblur=function(){
+	var reg=/^\d[Aa].{6}$/;
+	if(reg.test(oTxt[8].value)){
+		oP[8].innerHTML="正确";
+	}else{
+		oP[8].innerHTML="错误";
+	}
+}
+// 第一位是数字，第二位是任意一个字符,后面只能由字母、数字、下划线组成，共8位
+oTxt[9].onblur=function(){
+	var reg=/^\d.\w{6}$/;
+	if(reg.test(oTxt[9].value)){
+		oP[9].innerHTML="正确";
+	}else{
+		oP[9].innerHTML="错误";
+	}
+}
+// 写出中国人姓名正则    2--4个中文
+oTxt[10].onblur=function(){
+	var reg=/^[\u4e00-\u9fa5]{2,4}$/;
+	if(reg.test(oTxt[10].value)){
+		oP[10].innerHTML="正确";
+	}else{
+		oP[10].innerHTML="错误";
+	}
+}
+// 写一个qq号的正则，至少5位  至多12位数字
+oTxt[11].onblur=function(){
+	var reg=/^\d{5,12}$/;
+	if(reg.test(oTxt[11].value)){
+		oP[11].innerHTML="正确";
+	}else{
+		oP[11].innerHTML="错误";
+	}
+}
+// 邮编检验 共6位数字 第一位不能是0  
+oTxt[12].onblur=function(){
+	var reg=/^[1-9]\d{5}$/;
+	if(reg.test(oTxt[12].value)){
+		oP[12].innerHTML="正确";
+	}else{
+		oP[12].innerHTML="错误";
+	}
+}
+// 检验压缩包  xxx.zip或xxx.rar或xxx.tar 三个格式
+oTxt[13].onblur=function(){
+	var reg=/^.{3}\.(zip|rar|tar)$/;
+	if(reg.test(oTxt[13].value)){
+		oP[13].innerHTML="正确";
+	}else{
+		oP[13].innerHTML="错误";
+	}
+}
+// 电子邮件 (@符号前后使用单词字符即可)   232323@qq.com
+oTxt[14].onblur=function(){
+	var reg=/^\d{6}@[a-z]{2}\.com$/;
+	if(reg.test(oTxt[14].value)){
+		oP[14].innerHTML="正确";
+	}else{
+		oP[14].innerHTML="错误";
+	}
+}
+// 手机号 1 3|5|8|7  
+oTxt[15].onblur=function(){
+	var reg=/^1(3|5|8|7)\d{9}$/;
+	if(reg.test(oTxt[15].value)){
+		oP[15].innerHTML="正确";
+	}else{
+		oP[15].innerHTML="错误";
+	}
+}
+// 身份证 （18位  考虑最后一位可能为x）
+oTxt[16].onblur=function(){
+	var reg=/^\d{17}(x|\d)$/;
+	if(reg.test(oTxt[16].value)){
+		oP[16].innerHTML="正确";
+	}else{
+		oP[16].innerHTML="错误";
+	}
+}
+// 账户名只能使用数字字母下划线，不能数字开头，长度在6--18之间    
+oTxt[17].onblur=function(){
+	var reg=/^\D\w{5,17}$/;
+	if(reg.test(oTxt[17].value)){
+		oP[17].innerHTML="正确";
+	}else{
+		oP[17].innerHTML="错误";
+	}
+}
+</script>

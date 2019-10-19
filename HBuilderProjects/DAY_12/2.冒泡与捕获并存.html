@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//先捕获再冒泡
+	window.addEventListener("keyup",function(){
+		alert("window");
+	},false);
+	document.addEventListener("keyup",function(){
+		alert("document");
+	},false);
+	window.addEventListener("keyup",function(){
+		alert("window");
+	},true);
+	document.addEventListener("keyup",function(){
+		alert("document");
+	},true);
+</script>

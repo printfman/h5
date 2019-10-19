@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="_open()">open</button>
+		<button onclick="_close()">close</button>
+	</body>
+</html>
+<script type="text/javascript">
+	var timer;
+	function _open(){
+		timer=setInterval(function(){
+			console.log("hello");
+		},1000);
+	}
+	function _close(){
+		clearInterval(timer);
+	}
+</script>

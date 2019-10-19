@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				top: 200px;
+				margin: 0 auto;
+				width: 600px;
+				height: 400px;
+				position: absolute;
+				background: lightskyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<button>click</button>
+		<button>click</button>
+		<button>click</button>
+	</body>
+</html>
+<script src="jQuery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		// hide() show() toggle 
+// 		$("button").eq(0).click(function(){
+// 			$("div").eq(0).hide(1000);
+// 			$("div").eq(0).show(1000);
+// 			// console.log("开心");
+// 		});
+// // 		$("button").eq(1).click(function(){
+// // 			$("div").eq(0).show(1000);
+// // 			console.log("不开心");
+// // 		});
+// 		$("button").eq(2).click(function(){
+// 			$("div").eq(0).toggle(1000);
+// 			console.log("不开心");
+// 		});
+// // slideUp slideDown slideToggle
+// 		$("button").eq(0).click(function(){
+// 			$("div").eq(0).slideUp(1000);
+// 			console.log("不开心");
+// 		});
+// 		$("button").eq(1).click(function(){
+// 			$("div").eq(0).slideDown(1000);
+// 			console.log("不开心");
+// 		});
+// 		$("button").eq(2).click(function(){
+// 			$("div").eq(0).slideToggle(1000);
+// 			console.log("不开心");
+// 		});
+	//淡入淡出fadeIn fadeOut fadeToggle
+		$("button").eq(0).click(function(){
+			$("div").fadeIn(1000,function(){
+				console.log("heihei");
+			});
+		});
+		$("button").eq(1).click(function(){
+			$("div").fadeOut(1000,function(){
+				console.log("heihei");
+			});
+		});
+		$("button").eq(2).click(function(){
+			$("div").fadeToggle(1000,function(){
+				console.log("heihei");
+			});
+		});
+	});
+	
+	
+</script>

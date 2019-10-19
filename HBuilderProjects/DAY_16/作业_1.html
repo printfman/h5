@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+// 	1. 有一个长方形MyRect类，它的属性有
+// int length;
+// int width;
+// int area;
+// 方法有
+// 设置长和宽
+// 打印面积
+// 实现这个类的设计
+
+
+//es6写法
+class MyRect{
+	constructor(Length,Width,Area) {
+	    this.length=Length;
+		this.width=Width;
+	}
+	setWidth(Width){
+		this.width=Width;
+	}
+	srtLength(Length){
+		this.length=Length;
+	}
+	Arae(){
+		return this.length*this.width;
+	}
+}
+
+let rect=new MyRect(2,3);
+
+console.log(rect.Arae());
+
+//构造写法-------------------------------------------------------------------------------
+// function MyRect(Width,Height){
+// 	this.width=Width;
+// 	this.height=Height;
+// 	this.area=function(){
+// 		return this.width*this.height;
+// 	}
+// 	this.setHeight=function(Height){
+// 		this.height=Height;
+// 	}
+// 	this.setWidth=function(Width){
+// 		this.Width=Width;
+// 	}
+// }
+// let rect=new MyRect(4,5);
+// console.log(rect.area());
+
+</script>

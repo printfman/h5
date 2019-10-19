@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 600px;
+				height: 400px;
+				border: 1px solid gainsboro;
+				margin: 0px auto;
+			}
+			ul li{
+				list-style-type: none;
+				margin: 30px 0px;
+			}
+			#news{
+				width: 500px;
+				height: 200px;
+				border: 1px solid gainsboro;
+				display: none;
+				position: absolute;
+				background-color: gainsboro;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+			<ul>
+				<li>西游记</li>
+				<li>红楼梦</li>
+				<li>水浒传</li>
+				<li>三国演义</li>
+			</ul>
+		</div>
+		<div id="news">
+			《西游记》是中国古典神魔小说中的巅峰之作，书中讲述了唐僧师徒四人一路降妖伏魔，历经整整九九八十一难取经的故事。作者细腻而深刻地塑造了四个极其经典的形象：慈悲、宽厚但软弱、迂腐的师父唐僧；富有反叛精神、神通广大的孙悟空；自私狡猾、好吃懒做的猪八戒；任劳任怨、忠心耿耿的沙僧……他们怀着不同的目的走上了同一条取经路，面对各种难以想象的妖魔鬼怪、险恶绝境，他们既有矛盾，又有合作与情谊。 《西游记》作者吴承恩丰富的知识与惊人的想象力、非同一般的幽默感和妙笔生花的高超写作技巧，相信会令每位朋友都获益匪浅，从中取得人生路途中的“真经”。
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var oLi=document.getElementsByTagName("li");
+	var oNews=document.getElementById("news");
+	for(var i=0;i<oLi.length;i++){
+		oLi[i].onclick=function(evt){
+			var e=evt||event;
+			oNews.style.display="block";
+			oNews.style.top=e.pageY+"px";
+			oNews.style.left=e.pageX+"px";
+			event.stopPropagation?event.stopPropagation():e.cancelBubble=true;
+		}
+	}
+
+	window.onclick=function(){
+		oNews.style.display="none";
+	}
+</script>

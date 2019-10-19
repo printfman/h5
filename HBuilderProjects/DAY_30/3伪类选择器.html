@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="">
+		    0
+		</div>
+		<div id="">
+		    1
+		</div>
+		<div id="box2">
+		    2
+		</div>
+		<div id="box3">
+		    3
+		</div>
+		<div id="">
+		    4
+		</div>
+	</body>
+</html>
+<script src="jQuery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	//选中偶数行.从零开始 even
+	$(function(){
+		$("div:even").css({color:"red"});
+		//选中奇数行 odd
+		$("div:odd").css({background:"green"});
+		//第一个元素
+		$("div:first").css({fontSize:"30px"});
+		//最后一个元素
+		$("div:last").css({color:"yellow",fontSize:"40px"});
+		//eq(n) 第n个元素
+		$("div:eq(1)").css({background:"skyblue"});
+		$("div").eq(2).css({fontSize:"50px"});
+		//除去#box3的其他所有div
+		$("div:not(#box3)").css({background:"pink"});
+		$("div").not('#box3').css({background:"skyblue"});
+		
+		$("div:gt(0)").css({background:"red"});
+		$("div:lt(4)").css({background:"pink"});
+	});
+	
+</script>
+
+
+
+
+
+
+
+
+
+

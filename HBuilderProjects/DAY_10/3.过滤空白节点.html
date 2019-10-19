@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript">
+	var oUl=document.querySelector("ul");
+	var arr = oUl.childNodes;
+	
+	
+	for(var i=0;i<arr.length;i++){
+		if(arr[i].nodeType==3){
+			arr[i].remove();			
+		}
+	}
+	for(var i=0;i<arr.length;i++){
+		console.log(arr[i].innerHTML);
+	}
+	
+</script>

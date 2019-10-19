@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	function Person(Name,Age){
+		this.name=Name;
+		this.age=Age;
+		
+		}
+	
+	Person.prototype.eat=function(){
+		console.log("eat");
+	}
+	
+	function Student(Name,Age,Score){
+		Person.call(this,Name,Age);
+		this.scroe=Score;
+	}
+	Student.prototype=new Person();//因为此处Student里的name和age是继承Person的,所以new Student时传进去了参数
+	//所以在此时就不需要传参了
+	
+	let m=new Student("bob",18,"90");
+	console.log(m.name,m.age,m.scroe);
+	
+	m.eat();
+</script>

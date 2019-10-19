@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+// 	function add(){
+// 		var   count=0;
+// 		console.log(++count);
+// 	}
+// 	add();
+// 	add();
+// 	add();
+// 	
+// 	
+// 	var  sum=0;
+// 	function addd(){
+// 		console.log(++sum);
+// 	}
+// 	addd();
+// 	addd();
+// 	addd();
+	
+	//闭包
+	function fun(){
+		var  count=0;
+		function fun1(){
+			return count++;
+		}
+		return fun1;
+	}
+	var  f=fun();
+	var z=fun();
+	console.log(z());
+	console.log(z());
+	console.log(f());
+	console.log(f());
+	console.log(f());
+	
+// var f=(function fun(){
+// 	var  count=0;
+// 	function fun1(){
+// 		return count++;
+// 	}
+// 	return fun1;
+// })();
+// 	
+// console.log(f());
+// console.log(f());
+// console.log(f());
+	
+// 	
+// 	{
+// 		let a=10;
+// 		console.log(a);
+// 	}
+// 	console.log(a);
+</script>

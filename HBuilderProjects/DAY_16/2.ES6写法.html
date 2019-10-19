@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	class Student{
+		constructor(Name,Age,Genger) {
+			this.name=Name;
+			this.age=Age;
+			this.genger=Genger;
+		}
+		eat(){
+			console.log("我会吃");
+		}
+		showValue(){
+			console.log(this.name,this.age,this.genger);
+		}
+		fun(){
+			this.showValue();
+		}
+	}
+	
+	let Bob=new Student("Bob",20,"男");
+	Bob.fun();
+</script>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// 2. 有一个正方形类
+// 成员有：
+// length;area;roundLength；
+// setLength         getArea
+// getLength        getRoundLength
+// 有一个长方形类  长方形：正方形
+// 成员有：
+// length;width;area;roundLength;
+// set length       getArea
+// setWidth         getRoundLength
+// 用尽量简单的方法创建这两个类。
+
+//正方形
+// function square(Length){
+// 	this.length=Length;
+// 	
+// 	this.setLength=function(newLength){
+// 		this.length=newLength;
+// 	}
+// 	this.getLength=function(){
+// 		console.log(this.length);
+// 	}
+// 	this.getArea=function(){
+// 		let area=this.length*this.length;
+// 		console.log(area);
+// 	}
+// 	this.getRoundLength=function(){
+// 		let roundLength=this.length+this.length;
+// 		console.log(roundLength);
+// 	}
+// }
+// //长方形
+// function rectangle(Width){
+// 	this.width=Width;
+// 	this.getArea=function(){
+// 		console.log(this.width*this.length);
+// 	}
+// 	this.getRoundLength=function(){
+// 		console.log(this.width+this.length);
+// 	}
+// }
+// rectangle.prototype=new square(2);
+
+
+//长方形
+
+
+//ES6
+class square{
+	constructor(Length) {
+	  this.length=Length;
+	}
+	setLength(newLength){
+		this.length=newLength;
+	}
+	getLength(){
+		console.log(this.length);
+	}
+	getArea(){
+		let area=this.length*this.length;
+		console.log(area);
+	}
+	getRoundLength(){
+		let roundLength=this.length+this.length;
+		console.log(roundLength);
+	}
+}
+//长方形
+class rectangle extends square{
+	constructor(Width,Length){
+	  super(Length);
+	  this.width=Width;
+	  
+	}
+	
+	getArea(){
+		console.log(this.width*this.length);
+	}
+	getRoundLength(){
+		console.log(this.width+this.length);
+	}
+}
+
+
+let r=new rectangle(4,2);
+r.getLength();
+r.getArea();
+//正方形
+let s=new square(2);
+s.getLength();
+s.getArea();
+</script>

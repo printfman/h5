@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#box{
+				width: 300px;
+				height: 300px;
+				background-color: cadetblue;
+				display: none;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"> 
+			
+		</div>
+		<button>click</button>
+	</body>
+</html>
+<script src="jQuery.js"></script>
+<script>
+	$(function(){
+		$.fn.extend({
+			PopPlugin:function(){
+				let btn=null;
+				let obj=$(this)[0];
+				function moveCenter(){
+					obj.style.display="block";
+					obj.style.top=window.innerHeight/2-obj.offsetHeight/2+"px";
+					obj.style.left=window.innerWidth/2-obj.offsetWidth/2+"px";
+					creatBtn();
+				}
+				function creatBtn(){
+					btn=document.createElement("button");
+					btn.innerHTML="x";
+					btn.style.position="absolute";
+					btn.style.right=0+"px";
+					obj.appendChild(btn);
+					
+					btn.onclick=function(){
+						obj.style.display="none";
+					}
+					}
+				function close(){
+					btn.onclick=function(){
+						obj.style.display="none";
+					}
+				}
+				moveCenter();
+				close();
+			}
+		});
+		$("button").click(function(){
+			$("#box").PopPlugin();
+		})
+	});
+	
+</script>

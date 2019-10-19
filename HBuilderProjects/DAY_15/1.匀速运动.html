@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#box{
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				position: absolute;
+				left: 200px;
+				background-color: cadetblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<button>click</button>
+	</body>
+</html>
+<script>
+	var oBox=document.querySelector("#box");
+	var oBtn=document.querySelector("button");
+	var time=null;
+	oBtn.onclick=function(){
+		clearInterval(time);
+		time=setInterval(function(){			
+			oBox.style.left=oBox.offsetLeft+5+"px";
+			if(oBox.offsetLeft>=800){
+				oBox.style.left=800+"px";
+			}
+		},50);
+	}
+</script>

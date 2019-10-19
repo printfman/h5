@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	class Poker{
+		constructor(Color,Num) {
+		    this.color=Color;
+			this.num=Num;
+		}
+	}
+	class Hand{
+		constructor(newPoker) {
+		    this.poker=newPoker;
+		}
+	}
+	class Person{
+		constructor(Name,LH,RH) {
+		    this.name=Name;
+			this.lh=LH;
+			this.rh=RH;
+		}
+		showPoker(){
+			console.log(this.lh.poker.color,this.lh.poker.num);
+			console.log(this.rh.poker.color,this.rh.poker.num);
+		}
+		changPoker(){
+			let temp=null;
+			temp=this.lh.poker;
+			this.lh.poker=this.rh.poker;
+			this.rh.poker=temp;
+		}
+	}
+	
+	let poker1=new Poker("红桃","K");
+	let poker2=new Poker("黑桃","Q");
+	
+	let lhand=new Hand(poker1);
+	let rhand=new Hand(poker2);
+	
+	let Bob=new Person("bob",lhand,rhand);
+	Bob.showPoker();
+	Bob.changPoker();
+	Bob.showPoker();
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script src="jQuery.js"></script>
+<script>
+	$(function(){
+		//1
+		$.fun=function(){
+			console.log("这个杀手不太冷");
+		}
+		$.fun();
+		//2
+		$.extend({
+			sayByeBye:function(){
+				console.log("bye bye");
+			},
+			sayHello:function(){
+				console.log("伤心");
+			}
+		});
+		$.sayByeBye();
+		$.sayHello();
+		//3
+		$.MyFunction={
+			sayByeBye:function(){
+				console.log("byebye");
+			},
+			sayHello:function(){
+				console.log("伤心nei");
+			}
+		}
+		$.MyFunction.sayByeBye();
+		$.MyFunction.sayHello();
+	});
+</script>

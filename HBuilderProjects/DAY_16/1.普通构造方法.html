@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//构造方法
+	function Student(Name,Age,Genger){
+		this.name=Name;
+		this.age=Age;
+		this.genger=Genger;
+		this.eat=function(){
+			console.log("eat");
+		}
+		this.showValue=function(){
+			console.log(this.name,this.age,this.genger);
+		}
+	}
+	
+	let Bob=new Student("Bob",19,"男");
+	Bob.showValue();
+	Bob.eat();
+	console.log(Bob.name);
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+//	4.开发一款软件，根据公式（身高-108）*2=体重，可以有10斤左右的浮动。来观察测试者体重是否合适
+  //提示：输入身高(厘米)算体重(斤)，然后判断算出的体重和输入的体重差值在正负10斤以内,可使用Math.abs()
+// document.write(Math.abs(-10));
+
+var height=180;
+var weight=150;
+var weightNew=(height-108)*2;
+if(Math.abs(weightNew-weight)>10||Math.abs(weightNew-weight)<10){
+	document.write("height:"+height+"<br>"+"weight"+weight+"<br>"+"在10以内");
+}else{
+	document.write("不在10以内");
+}
+</script>

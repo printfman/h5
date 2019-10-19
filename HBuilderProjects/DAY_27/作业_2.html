@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+// 	3. 设计关于宠物的两个类
+// 猫：
+// 成员：
+// 身高，体重
+// 方法：
+// 跑， 跳，洗脸
+// 
+// 狗：
+// 成员：
+// 身高 体重
+// 方法：
+// 跑，跳，摇尾巴
+// 用尽量简单的方法创建这两个类。
+//猫
+// function Cat(Tall,Weight){
+// 	this.tall=Tall;
+// 	this.weight=Weight;
+// 	this.run=function(){
+// 		console.log("run");
+// 	}
+// 	this.jump=function(){
+// 		console.log("jump");
+// 	}
+// 	this.wash=function(){
+// 		console.log("洗脸");
+// 	}
+// }
+// function Dog(){
+// 	this.wrap=function(){
+// 		console.log("摇尾巴");
+// 	}
+// }
+// Dog.prototype=new Cat();
+// 
+// 
+// //狗
+// let dog=new Dog();
+// dog.jump();
+// dog.wrap();
+// //猫
+// let cat=new Cat();
+// cat.wash();
+
+
+//es6
+
+class Cat{
+	constructor(Tall,Weight){
+	 this.tall=Tall;
+	 this.weight=Weight; 
+	}
+	
+	run(){
+		console.log("run");
+	}
+	jump(){
+		console.log("jump");
+	}
+	wash(){
+		console.log("洗脸");
+	}
+}
+class Dog extends Cat{
+	constructor(Tall,Weight){
+		super(Tall,Weight);
+	}
+	wrap(){
+		console.log("摇尾巴");
+	}
+}
+
+
+
+//狗
+let dog=new Dog(12,24);
+dog.jump();
+dog.wrap();
+console.log(dog.weight);
+//猫
+let cat=new Cat(12,50);
+cat.wash();
+console.log(cat.weight);
+</script>

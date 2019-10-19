@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	function Student(Name){
+		this.name=Name;
+	}
+	
+	Student.prototype.clone=function(){
+			let temp=new Student(this.name);
+			return temp;
+		}
+	
+	let m=new Student("bob");//new 创建的空间在堆区,属于引用数据类型
+	
+	let s1=m;
+	
+	s1.name="Alice";
+	
+	console.log(m.name,s1.name);//此时m和s1共同指向Student这个空间,奇艺改变则都改变
+	
+	
+	let s2=new Student();
+	let m2=s2.clone();
+	m2.name="Krice";
+	
+	console.log(m2.name,m.name);//此时的m2为新开辟的空间,m2里的值和m里的值相同,但是改变m2不影响m里的值
+	
+</script>

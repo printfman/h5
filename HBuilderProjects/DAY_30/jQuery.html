@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box0">
+			0
+			<p>00</p>
+			<div id="">
+		
+			</div>
+		</div>
+		<div id="box1">
+			1
+			<p>11</p>
+		</div>
+		<div id="box2">
+			2
+			<p>22</p>
+		</div>
+		<div id="box3">
+			3
+			<p>33</p>
+		</div>
+		<div id="box4">
+			4
+			<p>44</p>
+		</div>
+		<p>sadcsa</p>
+	</body>
+</html>
+<script src="jQuery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#box1").next().css({background:"green"});
+		$("#box0").nextAll().css({background:"pink"});
+		
+		$("#box4").prevAll().css({background:"blue"});
+		$("#box4").prev().css({background:"pink"});
+		
+		$("#box2").find("p").css({background:"skyblue"});
+		
+		$("body").children("div").css({background:"red"});
+		$("body").children().css({background:"blue"});
+		
+		$("#box4 p").parent().css({background:"green"});
+		
+	})
+</script>
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="demo.html" method="get">
+			用户名:<input type="text">
+			密码:<input type="text">
+			<input type="submit" value="提交">			
+		</form>
+	</body>
+</html>
+<script>
+	var oFrom=document.querySelector("form");
+	var oName=document.getElementsByTagName("input")[0];
+	var oPwd=document.getElementsByTagName("input")[1];
+	
+	var _name=/^xixi$/;
+	var _pwd=/^123456$/;
+	oFrom.onsubmit=function(){
+	
+		if(_name.test(oName.value)==true&&_pwd.test(oPwd.value)==true){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//当同一对象绑定不同方法时执行后一种
+	document.ondblclick=function(){
+		alert("first");
+	}
+	document.ondblclick=function(){
+		alert("second");
+	}
+	//事件监听(默认情况下为false(事件冒泡，即先子后父))
+	//(true为事件捕获，即先父后子)
+	window.addEventListener("keydown",function(){
+		alert("_______________");
+	},true);
+	document.addEventListener("keydown",function(){
+		alert("********");
+	},true);
+
+</script>

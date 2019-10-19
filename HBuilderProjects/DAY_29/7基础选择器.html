@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<span id="mask">
+			111
+		</span>
+		<span class="box">222</span>
+		<a href="#">333</a>
+	</body>
+</html>
+<script src="jQuery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	//1.id选择器
+	// $("#mask").css("background","green");
+	$("#mask").css({background:"green"});
+	//类选择器
+	$(".box").css({background:"green"});
+	//标签选择器
+	$("a").css({color:"red"});
+	//通用选择器
+	$("*").css({background:"pink"});
+</script>

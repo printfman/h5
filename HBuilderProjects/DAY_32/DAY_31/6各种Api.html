@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				padding: 10px;
+				margin: 20px;
+				border: 1px solid gainsboro;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			222
+		</div>
+		<div id="box">
+			222
+		</div>
+		<div id="box">
+			222
+		</div>
+		<div id="box">
+			222
+		</div>
+		<div id="box">
+			222
+		</div>
+		<div id="box">
+			222
+		</div>
+		<div id="box">
+			222
+		</div>
+		<div id="box">
+			222
+		</div>
+		<div id="box">
+			222
+		</div>
+		<div id="box">
+			222
+		</div>
+		<div id="box">
+			222
+		</div>
+		<div id="box">
+			222
+		</div>
+		<div id="box">
+			222
+		</div>
+		<div id="box">
+			222
+		</div>
+		<button>返回顶端</button>
+	</body>
+</html>
+<script src="jQuery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+// 		console.log($("#box").attr("id"));
+// 		//有参则为改
+// 		console.log($("#box").attr("id","heihei"));
+// 		$("#heihei").html(666);
+// 		$("#box").attr({
+// 				a:1,
+// 				b:2,
+// 				c:3
+// 			});
+			//属性:值
+		$("#box").css({
+			backgroundColor:"red",
+			height:"300px",
+			width:400
+		});
+		console.log($("#box").css("width"));
+		console.log($("#box").css(["width","height","backgroundColor"]));
+		
+		console.log($("#box").width());
+		console.log($("#box").innerWidth());//content+border+padding
+		console.log($("#box").outerWidth());//content+padding
+		
+		$("#box").offset({
+			left:300,
+			top:200
+		})
+			//scrollTop:
+			
+		window.onscroll=function(){
+			console.log($(window).scrollTop());
+		}
+		$("button").click(function(){
+			$(window).scrollTop(0);
+		})
+	})
+</script>

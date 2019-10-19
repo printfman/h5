@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				height: 600px;
+				background-image: url(img/2.jpg);
+				position: relative;
+				background-size: cover;
+				cursor: pointer;
+				
+			}
+			.left{
+				width: 65px;
+				height: 136px;
+				background-color: white;
+				opacity: 0.3;
+				position: absolute;
+				left: 0px;
+				top: 300px;
+				color: black;
+				font-size: 40px;
+				cursor: pointer;
+			}
+			.right{
+				width: 65px;
+				height: 136px;
+				background-color: white;
+				opacity: 0.3;
+				position: absolute;
+				right: 0px;
+				top: 300px;
+				color: black;
+				font-size: 40px;
+				cursor: pointer;
+			}
+			ul li{
+				float: left;
+				list-style-type: none;
+				width: 50px;
+				height: 15px;
+				margin: 10px;
+				background-color: white;
+				cursor: pointer;
+			}
+			ul{
+				position: absolute;
+				bottom: 20px;
+				left: 600px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<button class="left"><</button>
+			<button class="right">></button>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	class Banner{
+		constructor(Target,Li) {
+		    this.target=Target;
+			this.li=Li;
+			this.index=0;
+		}
+		//box背景图片
+		bgImg(){
+			this.target.style.backgroundImage="url(img/"+this.index+".jpg)";
+		}
+		//li背景颜色
+		liBgColor(){
+			for(let i=0;i<this.li.length;i++){
+				if(this.index==i)
+				this.li[i].style.backgroundColor="red";
+			else{
+				this.li[i].style.backgroundColor="white";
+			}
+		  }
+		}
+		//NEXT
+		rightBtn(){
+			this.index++;
+			if(this.index>this.li.length-1){
+				this.index=0;
+			}
+			this.bgImg();
+			this.liBgColor();
+		}
+		//forward
+		leftBtn(){
+			this.index--;
+			if(this.index<0){
+				this.index=this.li.length-1;
+			}
+			this.bgImg();
+			this.liBgColor();
+		}
+		//按钮绑定事件
+		btnEvent(){
+			let oLBtn=document.getElementsByTagName("button")[0];
+			let oRBtn=document.getElementsByTagName("button")[1];
+			let that=this;
+			oLBtn.onclick=function(){
+				that.leftBtn();
+			}
+			oRBtn.onclick=function(){
+				that.rightBtn();
+			}
+		}
+		//li绑定事件
+		liEvent(){
+			let that=this;
+			for(let i=0;i<this.li.length;i++){
+				this.li[i].onmouseover=function(){
+					that.index=i;
+					that.liBgColor();
+					that.bgImg();
+				}
+			}
+			
+		}
+		//自动切图
+		autoChange(){
+			let that=this;
+			let time;
+			this.time=setInterval(function(){
+				that.index++;
+				that.liBgColor();
+				that.bgImg();				
+				if(that.index>that.li.length-2){
+					that.index=-1;
+				}
+			},1000);
+		}
+		clearTime(){
+			let that=this;
+			this.target.onmouseover=function(){			
+				clearInterval(that.time);
+			}
+			this.target.onmouseout=function(){
+				that.autoChange();
+			}
+		}
+		
+	}
+	let oBox=document.querySelector("#box");
+	let oLi=document.getElementsByTagName("li");
+	let eg=new Banner(oBox,oLi);
+	eg.btnEvent();
+	eg.liEvent();
+	eg.autoChange();
+	eg.clearTime();
+</script>

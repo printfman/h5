@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+            table{
+                width:50%;
+                position:relative;
+                margin:30px auto;
+                border-collapse: collapse;
+            }
+            th{
+                background: gainsboro;
+            }
+           tr{
+                height:2.5em;
+                margin: 0 auto;
+                text-align: center;
+            }
+			button{
+				background-color: white;
+				color: black;
+				border: 1px gainsboro solid;
+				outline: none;
+				cursor: pointer;
+				width: 44px;
+				height: 30px;
+			}
+			button:hover{
+				border: none;
+				background-color: gainsboro;
+			}
+			input:hover{
+				border: none;
+				background-color: gainsboro;
+			}
+			input{
+				background-color: white;
+				color: black;
+				border: 1px gainsboro solid;
+				outline: none;
+				cursor: pointer;
+				width: 65px;
+				height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<table border="1">
+			<tr>
+				<th>商品名称</th>
+				<th>数量</th>
+				<th>单价</th>
+				<th>小计</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>烧煎饼</td>
+				<td><button class="adddel-goods">-</button><span class="good-num">0</span><button class="adddel-goods">+</button></td>
+				<td>单价:<span class="single-price">2</span></td>
+				<td>小计:<span class="single-total">0</span></td>
+				<td><input type="button" value="删除"></td>
+			</tr>
+			<tr>
+				<td>水煮鱼</td>
+				<td><button class="adddel-goods">-</button><span class="good-num">0</span><button class="adddel-goods">+</button></td>
+				<td>单价:<span class="single-price">15</span></td>
+				<td>小计:<span class="single-total">0</span></td>
+				<td><input type="button" value="删除"></td>
+			</tr>
+			<tr id="lastTr">
+				<td colspan="5">一共<span class="total-num">0</span>件商品,共计花费<span class="goods-total-trice">0</span>元。</td>
+			</tr>
+		</table>
+		
+		<hr>
+
+	<table border="1">
+		<tr>
+			<th>商品名称</th>
+			<th>单价</th>
+			<th>操作</th>
+		</tr>
+		<tr>
+			<td>苹果</td>
+			<td>单价：<span>8</span></td>
+			<td>操作：<button  class="add-new-goods">添加</button></td>
+		</tr>
+		<tr>
+			<td>草莓</td>
+			<td>单价：<span>5</span></td>
+			<td>操作：<button  class="add-new-goods">添加</button></td>
+		</tr>
+	</table>
+
+	</body>
+</html>
+<script type="text/javascript">
+
+	class Shop{
+		//货物总数
+		goodsNum(){
+			let oGoodsNum=document.getElementsByClassName("good-num");
+			let oTotalNum=document.querySelector(".total-num");		
+			let totalNum=0;
+			for(let i=0;i<oGoodsNum.length;i++){
+				totalNum+=Number(oGoodsNum[i].innerHTML);
+			}
+			oTotalNum.innerHTML=totalNum;
+		}
+		//物品总费用
+		goodsTotalPrice(){
+			let oGoodsTotalPrice=document.querySelector(".goods-total-trice");
+			let oSingleTotal=document.getElementsByClassName("single-total");
+			let totalPrice=0;
+			for(let i=0;i<oSingleTotal.length;i++){
+				totalPrice+=Number(oSingleTotal[i].innerHTML);
+			}
+			oGoodsTotalPrice.innerHTML=totalPrice;
+		}
+		//计算商品小计
+		singleTotal(num,price){
+			return Number(num*price);
+		}
+		//增加货物
+		addGoods(btn){
+			let oGoodsNum = btn.previousElementSibling;
+			oGoodsNum.innerHTML=Number(oGoodsNum.innerHTML)+1;
+			let oSinglePrice=btn.parentNode.nextElementSibling.firstElementChild;
+			var oSingleTotal=oSinglePrice.parentNode.nextElementSibling.firstElementChild;
+			oSingleTotal.innerHTML=this.singleTotal(oGoodsNum.innerHTML,oSinglePrice.innerHTML);
+			this.goodsNum();
+			this.goodsTotalPrice();
+		}
+		//删除商品
+		delGoods(btn){
+			let oGoodsNum = btn.nextElementSibling;
+			if(oGoodsNum.innerHTML>=1){
+				oGoodsNum.innerHTML=Number(oGoodsNum.innerHTML)-1;
+				let oSinglePrice=btn.parentNode.nextElementSibling.firstElementChild;
+				let oSingleTotal=oSinglePrice.parentNode.nextElementSibling.firstElementChild;
+				oSingleTotal.innerHTML=this.singleTotal(oGoodsNum.innerHTML,oSinglePrice.innerHTML);
+				this.goodsNum();			
+				this.goodsTotalPrice();
+			}
+			
+		}
+		  goodsDel(btn){
+			  let tr = btn.parentNode.parentNode;
+			  tr.remove();
+			  this.goodsNum();
+			  this.goodsTotalPrice();
+		  }
+		//添加新商品
+		addNewGoods(btn){
+			let oLastTr=document.querySelector("#lastTr");
+			let oTable=document.getElementsByTagName("table")[0];
+			let onewGoodName=btn.parentElement.previousElementSibling.previousElementSibling;
+			let oNewsSinglePrice=btn.parentElement.previousElementSibling.firstElementChild;
+			let str=document.createElement("tr");
+			str.innerHTML="<td>"+onewGoodName.innerHTML+"</td><td><button class='adddel-goods'>-</button><span class='good-num'>0</span><button class='adddel-goods'>+</button></td><td>单价:<span class='single-price'>"+oNewsSinglePrice.innerHTML+"</span></td><td>小计:<span class='single-total'>0</span></td><td><input type='button' value='删除'></td>"
+			oTable.firstElementChild.insertBefore(str,oLastTr);
+
+			this.event();
+			
+		}
+		//绑定事件
+		event(){
+			let oBtn=document.getElementsByClassName("adddel-goods");
+			let that=this;
+			for(let i=0;i<oBtn.length;i++){
+				if(i%2==0){
+					oBtn[i].onclick=function(){
+						
+						that.delGoods(oBtn[i]);
+					}
+				}else{
+					oBtn[i].onclick=function(){
+						that.addGoods(oBtn[i]);
+					}
+				}
+			}
+			let btnDel = document.getElementsByTagName("input");
+			
+			for(let i=0; i<btnDel.length; i++){
+				btnDel[i].onclick = function(){
+					that.goodsDel(this);
+				}
+			}
+			let btn=document.getElementsByClassName("add-new-goods");
+			for(let i=0; i<btnDel.length; i++){
+				btn[i].onclick = function(){
+					that.addNewGoods(this);
+				}
+			}
+		}
+
+	}
+	
+	let btn=document.getElementsByClassName("add-new-goods")[0];
+	let shop=new Shop();
+	shop.event();
+	// shop.addNewGoods(btn);
+</script>

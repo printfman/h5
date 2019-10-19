@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	function Person(){};
+	
+	Person.prototype.eat=function(){
+		console.log("eat");
+	}
+	
+	function Student(){};
+		Student.prototype.sleep=function(){
+		console.log("sleep");
+	}
+	
+	Student.prototype=new Person();
+	
+//当先写子类的原型方法再写继承时会丢失子类的原型方法
+//所以必须先继承再添加原型方法
+	
+	let m=new Student();
+	m.eat();
+	m.sleep();
+</script>

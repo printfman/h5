@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+// 1.document.onkeyup//用户释放某个按键的效果
+// 2.onkeydown//按下某个按键的效果
+// 3.onkeypress//按下一个案件，并产生某个字符时的效果
+// 4.event.keyCode//获得产生字符的ASCII码值
+// （ctrl+回车ASCII为10） 
+// 5.event.ctrlkey//判断ctrl按键是否被按下
+// 键盘ASCII码值兼容写法
+// var key=e.keyCode||e.which||e.charCode;
+
+document.onkeyup=function(evt){
+	var e=evt||event;
+	var key=e.keyCode||e.which||e.charCode;
+	if(key==13){
+		alert("send");
+	}
+	console.log(key);
+}
+// document.onkeydown=function(){
+// 	console.log("按键按下");
+// }
+// document.onkeypress=function(){
+// 	console.log("按键发生改变");
+// }
+</script>

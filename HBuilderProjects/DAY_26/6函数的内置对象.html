@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	
+// 	this:1.普通函数出现this,代表调用该函数的对象本身, 
+// 		 2.类的构造方法中,代表被创建的元素本身,
+// 		 3.类的成员方法中,代表调用该方法的对象本身,
+// 		 4.事件,代表执行该函数的HTML元素本身
+	
+	
+	
+	//函数的内置对象
+	function fun(){
+		for(let i=0;i<arguments.length;i++){
+			console.log(arguments[i]);
+		}
+	}
+	fun(1,2,3,4);
+	
+	function fun1(){
+		console.log(arguments.callee);
+	}
+	fun1();
+	
+	
+	function mult(n){
+		let sum;
+		if(n==1){
+			sum=1;
+		}else{
+			sum=arguments.callee(n-1)*n;
+		}
+		return sum;
+	}
+	console.log(mult(3));
+</script>

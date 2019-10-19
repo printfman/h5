@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box{
+					width: 800px;
+					height: 300px;
+					margin: 200px auto;
+					display: flex;
+					overflow: hidden;
+					background-image: url(images/0.jpg);
+					
+					/* border: 1px solid black; */
+					background-size: contain;
+					position: relative;
+					
+				}
+				.box ul{
+					position: absolute;
+					bottom: -12px;
+					
+				}
+				.box li{
+					width: 38px;
+					height: 11px;
+					background-color: white;
+					display: inline-block;
+					list-style-type: none;
+				}
+				.left,.right{
+					position: absolute;
+					background-color: white;
+					border: none;
+					height: 300px;
+					width: 50px;
+					opacity: 0.3;
+					font-size: 30px;
+					color: gray;
+					cursor: pointer;
+					outline: none;
+				}
+				.left{
+					left: 0px;
+				}
+				.right{
+					right: 0px;
+				}
+				.left:hover{
+					background-color: #87CEEB;
+				}
+				.right:hover{
+					background-color: #87CEEB;
+				}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<button class="left"><</button>
+			<button class="right">></button>
+		</div>
+		
+	</body>
+</html>
+<script src="jQuery.js"></script>
+<script>
+		let oLi=document.getElementsByTagName("li");
+		let time=null;
+		let index=0;
+		function bg(){
+			$(".box").css({backgroundImage:"url(images/"+index+".jpg)"});
+		}
+		function autoli(){
+			
+			for(let i=0;i<$("li").length;i++){
+				if(i==index){
+					$("li").eq(i).css({backgroundColor:"red"});
+				}else{
+					$("li").eq(i).css({backgroundColor:"white"});
+				}
+			}
+		}
+		function auto(){
+			clearInterval(time);
+				time=setInterval(function(){
+				bg();
+				autoli();
+				index++;
+				if(index>4){
+					index=0;
+				}
+			},1500);
+		}
+		function li(){
+			for(let i=0;i<oLi.length;i++){
+				oLi[i].onmouseover=function(){
+					index=i;
+					bg();
+					auto();
+					autoli();
+				}
+			}
+		}
+		function stop(){
+			$(".box").mouseover(function(){
+				clearInterval(time);
+			});
+			$(".box").mouseout(function(){
+				auto();
+			});
+		}
+		function btn(){
+			$(".left").click(function(){
+				index--;
+				if(index<0){
+					index=4;
+				}
+				bg();
+				autoli();
+				
+			})
+			$(".right").click(function(){
+				index++;
+				if(index>4){
+					index=0;
+				}
+				bg();
+				autoli();
+				
+			})
+		}
+		
+	
+	auto();
+	stop();
+	li();
+	btn();
+</script>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+// 	7.创建一个死期银行账户的类
+// 成员变量:
+//     账户号码
+//     密码（加密）
+//     存储金额（余额）
+//     存储年限
+// 方法:
+//     构造方法
+//     设置，账户号码，密码
+//     存款
+//     设置年限
+//     取款
+
+//es6
+	class Bank{
+		constructor(Num,Pwd,Cash,Year) {
+			this.num=Num;
+			this.pwd=Pwd;
+			this.cash=Cash;
+			this.year=Year;
+		}
+		setNum(Num){
+			this.num=Num;
+		}
+		setPwd(Pwd){
+			this.pwd=Pwd;
+		}
+		store(money){
+			console.log("您已存入"+money+"元");
+			this.cash+=money;
+		}
+		setYear(newYear){
+			this.year=newYear;
+		}
+		outCash(money){
+			console.log("您已取出"+money+"元");
+			this.cash-=money;
+		}
+		showCash(){
+			console.log("您的余额为"+this.cash+"元");
+		}
+	}
+	let bank=new Bank(007,"123",20000,5);
+	
+	bank.store(10000);
+	bank.showCash();
+	bank.outCash(10000);
+	bank.showCash();
+
+//构造方法-----------------------------------------------------------------------------
+
+// 	function Bank(Num,Pwd,Cash,Year){
+// 		
+// 		this.num=Num;
+// 		this.pwd=Pwd;
+// 		this.cash=Cash;
+// 		this.year=Year;
+// 		
+// 		this.setNum=function(Num){
+// 			this.num=Num;
+// 		}
+// 		this.setPwd=function(Pwd){
+// 			this.pwd=Pwd;
+// 		}
+// 		this.store=function(money){
+// 			console.log("您已存入"+money+"元");
+// 			this.cash+=money;
+// 		}
+// 		this.setYear=function(newYear){
+// 			this.year=newYear;
+// 		}
+// 		this.outCash=function(money){
+// 			console.log("您已取出"+money+"元");
+// 			this.cash-=money;
+// 		}
+// 		this.showCash=function(){
+// 			console.log("您的余额为"+this.cash+"元");
+// 		}
+// 	}
+// 	let bank=new Bank(007,"123",20000,5);
+// 	
+// 	bank.store(10000);
+// 	bank.showCash();
+// 	bank.outCash(10000);
+// 	bank.showCash();
+</script>

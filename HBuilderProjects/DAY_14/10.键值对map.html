@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// 	set(key,value) 向集合中添加一个元素
+	// 	get(键)  根据键去取值
+	// 	delete(键) 删除集合中某个数
+	// 	has(键) 判断集合中是否含有某个值
+	// 	clear() 清空集合
+	
+	let map=new Map();
+	map.set("a","老汪");
+	map.set("b","老洪");
+// 	
+// 	console.log(map.get("a"));
+// 	
+// 	// map.delete("a");
+// 	console.log(map);
+// 	
+// 	console.log(map.has("b"));
+// 	map.clear();
+	// console.log(map);
+	
+	for(let item of map){
+		console.log(item[0],item[1]);
+	}
+</script>

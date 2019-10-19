@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#small-box{
+				height: 200px;
+				width: 200px;
+				position: absolute;
+				background-image: url(img/13.jpg);
+				background-size: 200px 200px;
+				background-repeat: no-repeat;
+				left:100px;
+				top:100px;
+			}
+			#mask{
+				height: 100px;
+				width: 100px;
+				position: absolute;
+				background-color: red;
+				opacity: 0.3;
+				display: none;
+			}
+			#big-box{
+				height: 400px;
+				width: 400px;
+				position: absolute;
+				background-image: url(img/13.jpg);
+				background-size: 800px 800px;
+				background-repeat: no-repeat;
+				left:350px;
+				top:100px;
+				display: none;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div id="small-box">
+			<div id="mask">
+				
+			</div>
+		</div>
+		<div id="big-box">
+			
+		</div>
+	</body>
+</html>
+<script src="1放大镜插件.js"></script>
+<script>
+	let oMask=document.querySelector("#mask");
+	let oSmallBox=document.querySelector("#small-box");
+	let oBigBox=document.querySelector("#big-box");
+	let eg=new Loupe(oSmallBox,oBigBox,oMask);
+	eg.onmouseover();
+	eg.onmousemove();
+	eg.onmouseout();
+</script>

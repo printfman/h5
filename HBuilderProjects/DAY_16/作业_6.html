@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// 6.已知一个人，承重最大为100kg。问现有2T货物，问，这个人最少几次可以搬完。
+	
+	class Goods{
+		constructor(Weight) {
+		    this.weight=Weight;
+		}
+	}
+	
+	class Person{
+		constructor(AblePress) {
+		    this.ablePress=AblePress;
+		}
+		
+		time(goods){
+			return Math.ceil(goods.weight/this.ablePress);
+		}
+	}
+	
+	let goods=new Goods(2000);
+	let person=new Person(100);
+	
+	console.log(person.time(goods));
+	
+	
+	//构造方法---------------------------------------------------
+	
+	
+// 	function Goods(Weight){
+// 
+// 		   this.weight=Weight;
+// 	}
+// 	
+// 	function Person(AblePress){
+// 		
+// 		this.ablePress=AblePress;
+// 		
+// 		this.time=function(goods){
+// 			return Math.ceil(goods.weight/this.ablePress);
+// 		}
+// 	}
+// 	
+// 	let goods=new Goods(2000);
+// 	let person=new Person(100);
+// 	
+// 	console.log(person.time(goods));
+</script>

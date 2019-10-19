@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//exec 据正则表达式查找，结果满足,会返回一个长度为1的数组（数组只有一个值）
+	//g 全局
+	var reg=/\d/g;
+	console.log(reg.exec("vffx113hjghjf23")[0]);
+	
+	// 	正则中相关字符串的方法:
+	// 	search方法  返回与正则表达式查找内容匹配的第一个子字符串的位置
+	
+	var str="Pabcdslaje pwko pojwafo";
+	var reg=/p/i;
+	// console.vah 方法
+	// 使用正则表达式模式对字符串执行查找，并将包含查找的结果作为数组返回。
+	
+	reg=/\d/;
+	var str="sa12dasfa";
+	console.log(str.match(reg));
+	
+	// 	replace 方法
+	// 	返回根据正则表达式进行文字替换后的字符串的复制。
+	// 	stringObj.replace(rgExp, replaceText)
+	
+	var str="12 sd 11fds";
+	console.log(str.replace(/[12]/g,"s"));
+</script>

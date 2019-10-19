@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//订阅者,观察者
+	
+	var new1={
+		update:function(what){//waht是发布者的消息
+			console.log(what+"楚乔传");
+		}
+	}
+	
+	var new2={
+		update:function(what){
+			console.log(what+"英雄联盟");
+		}
+	}
+	var new3={
+		update:function(what){
+			console.log(what+"这个杀手不太冷");
+		}
+	}
+	
+	//主题或发布者
+	
+	class Them{
+		constructor(cnt) {//订阅内容
+		    this.news=cnt;
+		}
+		information(){
+			for(let i=0;i<this.news.length;i++){
+				this.news[i].update("即将播放");
+			}
+		}
+	}
+	
+	let n=new Them([new1,new2,new3]);
+	n.information();
+</script>

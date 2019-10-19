@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			div{
+				width: 220px;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+   class Waterfall{
+	   creatDiv(){
+		   for(let i=0;i<14;i++){
+		   		let oDiv=document.createElement("div");
+		   		oDiv.style.backgroundImage="url(img/"+i+".jpg)";
+		   		let divHeight=Math.round(Math.random()*300+50);
+				oDiv.style.height=divHeight+"px";
+		   		oDiv.style.backgroundSize="220px "+divHeight+"px";
+				oDiv.innerHTML=i;
+				document.body.appendChild(oDiv);
+		   }
+		   this.showDiv();
+	   }
+	   showDiv(){
+		   let divNum=Math.floor(window.innerWidth/230);
+		   let divHeights=[];
+		   let oDiv=document.getElementsByTagName("div");
+		   for(let i=0;i<oDiv.length;i++){
+			   if(divHeights.length==divNum){
+			   		let minIndex=this.minHeight(divHeights);
+					oDiv[i].style.top = divHeights[minIndex] + 10 + "px";
+					oDiv[i].style.left = minIndex * 220 + minIndex * 10 + "px";
+					divHeights[minIndex] += oDiv[i].offsetHeight + 10;
+
+			   }
+			   else{
+				   oDiv[i].style.top=0+"px"; 
+				   oDiv[i].style.left=i*220+i*10+"px";   
+				   divHeights[i]=oDiv[i].offsetHeight;
+			   }
+		   }
+		   
+	   }
+	   	minHeight(arr){
+			let minHeight=0;
+			for(let i=0;i<arr.length;i++){
+				if(arr[minHeight]>arr[i]){
+					minHeight=i;
+				}
+			}return minHeight;
+	   }
+	   forever(){
+		   let that = this;		
+			window.onscroll = function(){
+				let top = document.body.scrollTop || document.documentElement.scrollTop;
+				if(top>400){
+					that.creatDiv();
+				}
+			}
+
+	   }
+	   
+   }
+   let wf=new Waterfall();
+   
+   wf.creatDiv();
+   wf.creatDiv();
+   wf.creatDiv();
+   wf.showDiv();
+wf.forever();
+</script>

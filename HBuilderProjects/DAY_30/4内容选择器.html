@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+			<style type="text/css">
+				div{
+					height: 50px;
+				}
+			</style>
+		</title>
+		
+	</head>
+	<body>
+		<div id="">
+		    hello world
+		</div>
+		<div id="">
+		    1
+		</div>
+		<div id="">
+		    2
+		</div>
+		<div id="">
+		    3
+		    <span id="s"></span>
+		</div>
+		<div id=""></div>
+	</body>
+</html>
+<script src="jQuery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		$("div:contains('hello world')").css({background:"green"});
+		$("div:empty").css({background:"pink"});
+		$("div:has('span')").css({background:"skyblue"});
+	})
+</script>
+
+
+
+
+
+

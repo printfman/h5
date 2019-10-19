@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	let age=Symbol();
+	var arr={
+		"name":"lll",
+		[age]:18
+	};
+	for(var i in arr){
+		console.log(arr);
+	}
+	console.log(arr[age]);
+	
+	let age1 = Symbol("heihei");
+	let age2 = Symbol("heihei");
+	
+	console.log(age1 === age2);
+</script>

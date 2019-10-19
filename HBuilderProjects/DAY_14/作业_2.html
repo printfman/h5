@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#boxa,#boxb,#boxc,#boxd{
+				width: 150px;
+				height: 200px;
+				margin-left: 18px;
+				float: left;
+				border: 1px solid grey;
+				background-position: -8px 10px;
+				background-repeat: no-repeat;
+				background-color: white;
+			}
+			
+			#boxa{
+				background-image: url(img/shirt_1.jpg);
+			}
+			#boxb{
+				background-image: url(img/shirt_2.jpg);
+			}
+			#boxc{
+				background-image: url(img/shirt_3.jpg);
+			}
+			#boxd{
+				background-image: url(img/shirt_4.jpg);
+			}
+			#box{
+				width: 700px;
+				margin: 0px auto;
+				text-align: center;
+				border: 1px solid gray;
+				background-color: gainsboro;
+			}
+			#clear{
+				clear: both;
+			}
+			#show{
+				width: 350px;
+				height:350px;
+				background:url(img/shirt_1_big.jpg) no-repeat;
+				background-size: cover;
+				border: 1px solid gainsboro;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<main id="box">
+			<div id="boxa"></div>
+			<div id="boxb"></div>
+			<div id="boxc"></div>
+			<div id="boxd"></div>
+			<div id="clear"></div>
+		</main>
+		<div id="show">
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var oBox=document.getElementsByTagName("div");
+	var oShow=document.querySelector("#show");
+	for(var i=0;i<oBox.length-2;i++){
+			oBox[i].onmouseover=function(evt){
+			var e=evt||event;
+			oShow.style.left=e.pageX+"px";
+			oShow.style.top=e.pageY+"px";
+		}			
+	}
+		
+	
+</script>

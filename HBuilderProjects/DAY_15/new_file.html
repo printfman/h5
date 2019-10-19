@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	
+// 	class Road{
+// 		constructor(newS) {
+// 		    this.s=newS;
+// 		}
+// 	}
+// 	class Car{
+// 		constructor(newV) {
+// 		    this.v=newV;
+// 		}
+// 		go(Road){
+// 			console.log("需要"+Road.s/this.v);
+// 		}
+// 	}
+// 	
+// 	let cara=new Car(60);
+// 	let r=new Road(1000);
+// 	cara.go(r);
+class Change{
+	constructor(name,left,right){
+		this.newName=name;
+		this.newLeft=left;
+		this.newRight=right;
+	}
+	show(){
+		let temp=null;
+		temp=this.newLeft;
+		this.newLeft=this.newRight;
+		this.newRight=temp;
+		console.log("左手"+this.newLeft+"右手"+this.newRight);
+	}
+}
+
+	let xiaoming=new Change("小明","红桃A","黑桃K");
+	xiaoming.show();
+	
+</script>

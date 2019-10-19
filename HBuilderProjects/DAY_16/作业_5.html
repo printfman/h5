@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// 5.编写一个复类，数据成员包含分子与分母，实现+，-，*，/。
+	
+	class Operator{
+		constructor(Symbol) {
+		    this.symbol=Symbol;
+		}
+		compute(Num){
+			switch(this.symbol){
+				case "+":
+					return Num.num1+Num.num2;
+					break;
+				case "-":
+					return Num.num1-Num.num2;
+					break;
+				case "*":
+					return Num.num1*Num.num2;
+					break;
+				case "/":
+					return Num.num1/Num.num2;
+					break;	
+			} 
+		}
+	} 
+	
+	class Num{
+		constructor(a1,a2,b1,b2) {
+		    this.num1=a1/a2;
+			this.num2=b1/b2;
+		}
+	}
+	
+	let num=new Num(1,2,1,2);
+	
+	let operator=new Operator("+");
+	
+	console.log(operator.compute(num));
+	
+	
+	// 构造方法-------------------------------------------------------------------
+// 	function Operator(Symbol){
+// 			
+// 		this.symbol=Symbol;
+// 		this.compute=function(Num){
+// 			switch(this.symbol){
+// 				case "+":
+// 					return Num.num1+Num.num2;
+// 					break;
+// 				case "-":
+// 					return Num.num1-Num.num2;
+// 					break;
+// 				case "*":
+// 					return Num.num1*Num.num2;
+// 					break;
+// 				case "/":
+// 					return Num.num1/Num.num2;
+// 					break;	
+// 			} 
+// 		}
+// 	} 
+// 	
+// 	function Num(a1,a2,b1,b2){
+// 		
+// 		this.num1=a1/a2;
+// 		
+// 		this.num2=b1/b2;
+// 	}
+// 	
+// 	
+// 	let num=new Num(2,2,1,2);
+// 	let operator=new Operator("+");	
+// 	console.log(operator.compute(num));
+</script>

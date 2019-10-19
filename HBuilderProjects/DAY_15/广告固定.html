@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#side{
+				width: 130px;
+				height: 450px;
+				background-image: url(aside.jpg);
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<p>我是个配合演出的p标签，忽略我吧，重点在侧栏</p>
+		<div id="side">
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var oBox=document.querySelector("#side");
+	let _top;
+	let time=null;
+	let height;
+	window.onscroll=function(){
+		
+		 _top = document.body.scrollTop || document.documentElement.scrollTop;
+		 clearInterval(time);
+		time=setInterval(function(){
+			 _height=(_top-oBox.offsetTop+200)/5;
+			 if(oBox.offsetTop==_top+200){
+				 clearInterval(time);
+			 }
+			 oBox.style.top=oBox.offsetTop+_height+"px";
+		},50);
+	}
+	
+	
+
+
+	
+</script>

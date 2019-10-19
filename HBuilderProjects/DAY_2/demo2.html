@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	var a,b,c,x;
+	for(var i=100;i<=999;i++){
+		a=parseInt(i%10);
+		b=parseInt(i%100/10);
+		c=parseInt(i/100);
+		x=a*a*a+b*b*b+c*c*c;
+		if(i==x){
+			document.write(i+"<br>");
+		}
+	}
+</script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// 9.输入4个数，按照由小到大的顺序输出
+	 var a=123;
+	 var b=345;
+	 var c=213;
+	 var d=340;
+	 a=(a>b)?a:b;
+	 a=(a>c)?a:c;
+	 a=(a>d)?a:d;
+	 document.write(a);
+	 document.write("<br>");
+	 //10.输入1个四位数，求各位数字的平方和。
+	 var x=1234;
+	 var y=x%10+x%100/10+x%1000/100+x/1000;
+	 document.write(parseInt(y));
+	  document.write("<br>");
+	// 	 11.铁路托运行李规定：行李重不超过50公斤的，托运费按每公斤0.15元计费；如超50公斤，超过部分每公斤加收0.10元。
+	// 编一程序完成自动计费工作。
+	var weight=60;
+	var free;
+	if(weight<=50){
+		free=0.15*weight;
+	}
+	else{
+		free=0.15*50+(weight-50)*0.1;
+	}
+	document.write(free);
+// 	12.输入一个四位数，要求将它的千位、百位、十位、个位上的数字按由小到大排列，输出一个新数。
+// （如：输入 4287  要求输出为  2478）  
+document.write("<br>");
+var i=9143;
+var iA=parseInt(i%10);
+var iB=parseInt(i%100/10);
+var iC=parseInt(i/100%10);
+var iD=parseInt(i/1000);
+var temp=0;
+var str=[iA,iB,iC,iD];
+for(var i=0;i<str.length-1;i++){
+	for(var j=0;j<str.length-1-i;j++){
+		if(str[i]<str[i++]){
+			temp=str[i];
+			str[i]=str[i+1];
+			str[i+1]=temp;
+		}
+	}
+}
+for(var a=0;a<str.length;a++){
+	console.log(str[a]);
+}
+//13.输入两门课的成绩，如果两门成绩都在60分以上。则输出“it is pass.”只要有一门低于60分就输出“it is not pass.”
+ //  如果输入的任何一门成绩不在0-100范围内则输出“it is error.”。
+ var classOne=23;
+ var classTwo=55;
+ if(classOne<60||classTwo<60){
+	 console.log("it is not pass.");
+ }else if(classOne>=60&&classOne<=100&&classTwo>=60&&classTwo<=100){
+	 console.log("it is pass.");
+ }else{
+	 console.log("it is error.");
+ }
+</script>

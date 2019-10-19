@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			#box{
+				width: 250px;
+				margin: 0px auto;
+				margin-top: 30px;
+			}
+			input{
+				height: 20px;
+				width: 100%;
+			}
+			ul{
+				background-color: gainsboro;
+				position: absolute;
+				width: 250px;
+				display: none;
+			}
+			li{
+				list-style-type: none;
+				height: 30px;
+				line-height: 30px;
+				padding-left: 20px;
+				box-sizing: border-box;
+			}
+			ul li:hover{
+				background-color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<input type="text"/>
+			<ul>
+				<li >阴阳师</li>
+				<li >王者荣耀</li>
+				<li >英雄联盟</li>
+				<li >我的世界</li>
+			</ul>
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	var oUl=document.querySelector("ul");
+	var oTxt=document.querySelector("input");
+	var oLi=document.getElementsByTagName("li");
+	oTxt.onclick=function(){
+		oUl.style.display="block";
+	}
+	for(var i=0;i<oLi.length;i++){
+		oLi[i].onclick=function(){
+			oTxt.value=this.innerText;
+			oUl.style.display="none";
+		}
+	}
+</script>

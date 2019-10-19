@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#box{
+				height: 100px;
+				width: 100px;
+				background: skyblue;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<button>开始</button>
+		<button>结束</button>
+		<div id="box">
+			
+		</div>
+	</body>
+</html>
+<script src="jQuery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	//自定义动画
+	$(function(){
+		$("button").eq(0).click(function(){
+			$("#box").animate({
+				left:600,
+				width:500,
+				height:300.
+			},1000).animate({
+				left:800,
+				top:800,
+				height:300.
+			},2000);
+		});
+	});
+	$(function(){
+// 		$("button").eq(1).click(function(){
+// 			$("#box").stop(false,false);
+// 		});//立刻结束当前动画
+// 		$("button").eq(1).click(function(){
+// 			$("#box").stop(true,false);
+// 		});//立刻结束当前动画,清除动画队列
+// 		$("button").eq(1).click(function(){
+// 			$("#box").stop(false,true);
+// 		});//立刻完成当前动画
+		$("button").eq(1).click(function(){
+			$("#box").stop(true,true);
+		});//立刻完成当亲动画,清除动画队列
+	})
+	
+</script>
+
+
+
+
+
+
+
+
+
+

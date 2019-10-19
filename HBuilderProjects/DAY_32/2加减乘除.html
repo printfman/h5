@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script src="jQuery.js"></script>
+<script>
+	$(function(){
+		$.extend({
+			oper:function(a,o,b){
+				switch(o){
+					case "+":
+						return a+b;
+						break;
+					case "-":
+						return a-b;
+						break;
+					case "*":
+						return a*b;
+						break;
+					case "/":
+						return a/b;
+						break;
+				}
+			}
+		});
+		console.log($.oper(1,"*",8));
+		
+	});
+</script>

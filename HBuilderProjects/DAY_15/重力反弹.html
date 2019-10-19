@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			#ball{
+				width: 80px;
+				height: 80px;
+				margin: 0px auto;
+				border-radius: 50%;
+				background-color: #008000;
+				position: absolute;
+			}
+			#box{
+				width: 800px;
+				height: 500px;
+				border: 1px black solid;
+				margin: 0px auto;
+			}
+		</style>
+	</head>
+	<div id="box">
+		<div id="ball"></div>
+	</div>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	var oBall=document.getElementById("ball");
+	var oBox=document.getElementById("box");
+	
+		var g = 1;  //重力加速度;
+		var vx =4; //x轴速度;
+		var vy = 2;	//y轴速度;
+		var time;
+		var left,top;
+		
+		time=setInterval(function(){
+	
+			if(oBall.offsetTop >= oBox.offsetHeight - oBall.offsetHeight){
+				oBall.style.top = oBox.offsetHeight - oBall.offsetHeight + "px";
+				vy = -vy*0.5;
+			}
+			if(oBall.offsetLeft>=800){
+				oBall.style.left=800+"px";
+				clearInterval(time);
+			}
+			vy = vy + g;
+			oBall.style.left = oBall.offsetLeft + vx + "px";
+			oBall.style.top = oBall.offsetTop + vy +  "px";
+	
+		},30)
+	
+	
+	
+</script>

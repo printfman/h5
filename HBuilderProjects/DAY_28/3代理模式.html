@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//清晨的粥永远比深夜的酒更更甜
+	
+	class Me{
+		constructor(Name) {
+		    this.name=Name;
+		}
+		speakStory(){
+			console.log("美女与野兽");
+		}
+		chat(){
+			console.log("七月的风，八月的雨，卑微的我喜欢遥远的你");
+		}
+	}
+	class You{
+		constructor(Name) {
+		    this.name =	Name;
+		}
+		speakStory(){
+			this.name.speakStory();
+		}
+		chat(){
+			this.name.chat();
+		}
+	}
+	
+	let o=new Me("小狗");
+	let h=new You(o);
+	h.speakStory();
+	h.chat();
+	
+	
+	
+	
+	
+</script>

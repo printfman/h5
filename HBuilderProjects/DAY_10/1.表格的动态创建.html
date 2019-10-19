@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	var _table=document.createElement("table");
+	var count=0;
+	_table.border="1px";
+	
+	for(var i=0;i<3;i++){
+		var _tr=document.createElement("tr");
+		for(var j=0;j<5;j++){
+			var _td=document.createElement("td");
+			_td.innerHTML=count++;
+			_tr.appendChild(_td);
+		}
+		
+		
+		_table.appendChild(_tr);
+		
+	}
+	
+	document.body.appendChild(_table);
+	
+</script>

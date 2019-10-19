@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	function Snake(Name){
+		this.name=Name;
+	}
+	function Dog(Name){
+		this.name=Name;
+	}
+	
+	function eat(food){
+		console.log(this);
+		console.log(this.name+":"+food);
+	}
+	
+	//eat();//此时默认this指向window
+	
+	let m=new Dog("哮天犬");
+	 eat.call(m,"骨头");//此时this指向Dog
+	 
+	eat.call(new Snake("白娘子"),"雄黄酒");//此时 this指向Snake;
+	
+	let t=new Dog("孙悟空");
+	eat.call(t,["香蕉"]);
+	 
+	eat.call(new Snake("小青"),["小虫"]);
+	
+</script>

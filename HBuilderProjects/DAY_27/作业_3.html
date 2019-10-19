@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+// 	4. 有三种汽车，卧车，卡车，公共汽车。速度分别为60km/h 40km/h 30km/h。
+// 有三种路，高速路，乡间小路，山路。速度加成分别为0km/h  -10km/h  -20km/h。
+// 计算每种汽车在不同公路上行驶1000km所花费的时间。
+
+	class Car{
+
+		constructor(Speed){ 
+			this.speed=Speed;
+		}
+		time(road){
+			this.speed+=road.v;
+			let time=(1000/this.speed).toFixed(1);
+			console.log(time);
+		}
+		
+	}
+// 	class Car_1 extends Car{
+// 		constructor(Speed){ 
+// 			super(Speed);
+// 		}
+// 	}
+// 	class Car_2 extends Car{
+// 		constructor(Speed){ 
+// 			super(Speed);
+// 		}
+// 	}
+// 	class Car_3 extends Car{
+// 		constructor(Speed){ 
+// 			super(Speed);
+// 		}
+// 	}
+	//路
+	class Road{
+		constructor(V){ 
+			this.v=V;
+		}
+	}
+// 	class Road_1 extends Road{
+// 		constructor(V){ 
+// 			super(V);
+// 		}
+// 	}
+// 	class Road_2 extends Road{
+// 		constructor(V){ 
+// 			super(V);
+// 		}
+// 	}
+// 	class Road_3 extends Road{
+// 		constructor(V){ 
+// 			super(V);
+// 		}
+// 	}		
+
+let a=new Car_1(60);
+a.time(new Road_1(0));
+
+let b=new Car(40);
+b.time(new Road_1(0));
+
+</script>

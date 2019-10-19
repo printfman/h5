@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript">
+	var oUl=document.querySelector("ul");
+	function addEvent(obj,type,callBack){
+		if(obj.addEventListener){
+			obj.addEventListener(type,callBack);
+		}else{
+			obj.attachEvent("on"+type,callBack);
+		}
+	}
+	addEvent(oUl,"click",function(evt){
+		var e=evt||event;
+		var target=e.target||e.srcElement;
+		
+		if(target.tagName=="LI"){
+			target.style.backgroundColor="pink";
+		}
+	});
+</script>

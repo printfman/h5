@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			span{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="demo.html" method="get">
+			用户名:<input type="text">
+			<span></span><br>
+			密码:<input type="text">
+			<span></span><br>
+			<input type="submit" value="提交">			
+		</form>
+	</body>
+</html>
+<script>
+	var oFrom=document.querySelector("form");
+	var oName=document.getElementsByTagName("input")[0];
+	var oPwd=document.getElementsByTagName("input")[1];
+	var oNameP=document.getElementsByTagName("span")[0];
+	var oPwdP=document.getElementsByTagName("span")[1];
+	var _name=/^xixi$/;
+	var _pwd=/^123456$/;
+	var flagName=false;
+	var flagPwd=false;
+	oName.onblur=function(){
+		if(_name.test(oName.value) == true){
+			oNameP.innerHTML="right";
+			flagName=true;
+		}else{
+			oNameP.innerHTML="错误";
+		}
+	}
+	oPwd.onblur=function(){
+		if(_pwd.test(oPwd.value) == true){
+			oPwdP.innerHTML="right";
+			flagPwd=true;
+		}else{
+			oPwdP.innerHTML="错误";
+		}
+	}
+	oFrom.onsubmit=function(){
+		if(flagName&&flagPwd){
+			return true;
+		}else{
+			return false;
+		}
+	}
+</script>

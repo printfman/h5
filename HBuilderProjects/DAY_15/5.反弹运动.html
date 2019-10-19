@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div{
+				width: 50px;
+				height: 50px;
+				
+				border-radius: 50%;
+				position: absolute;
+				
+			}
+			#boxa{
+				top: 200px;
+				background-color: cadetblue;
+			}
+			#boxb{
+				left: 800px;
+				background-color: green;
+			}
+			#box{
+				top: 600px;
+				background-color: black;
+			}
+			#boxc{
+				top: 500px;
+				left: 300px;
+				background-color: yellow;
+			}
+			#boxd{
+				top: 200px;
+				left: 1200px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<div id="boxa">
+			
+		</div>
+		<div id="boxb">
+			
+		</div>
+		<div id="boxc">
+			
+		</div>
+		<div id="boxd">
+			
+		</div>
+		<button>start</button>
+	</body>
+</html>
+<script type="text/javascript">
+	let oBox=document.getElementsByTagName("div");
+	let oBtn=document.querySelector("button");
+	let time=null;
+	
+	function fun(obj){
+		let speedX=50;
+		let speedY=50;
+		// clearInterval(time);
+			setInterval(function(){
+			if(obj.offsetTop>=window.innerHeight-obj.offsetHeight){
+				speedY*=-1;
+			}
+			if(obj.offsetLeft>=window.innerWidth-obj.offsetWidth){
+			
+				speedX*=-1;
+			}
+			if(obj.offsetTop<=0){
+				speedY*=-1;
+			}
+			if(obj.offsetLeft<=0){
+				speedX*=-1;
+			}
+			obj.style.left=obj.offsetLeft+speedX+"px";
+			obj.style.top=obj.offsetTop+speedY+"px";
+		},50);
+	}
+	oBtn.onclick=function(){
+		for(let i=0;i<oBox.length;i++){
+			fun(oBox[i]);
+		}
+	}
+</script>

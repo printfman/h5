@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#box{
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				position: absolute;
+				left: 200px;
+				background-color: cadetblue;
+				opacity: 0.5;
+			}
+				
+			</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<button>click</button>
+	</body>
+</html>
+<script>
+	let oBox=document.getElementById("box");
+	let oBtn=document.querySelector("button");
+	var time=null;
+	function go(obj,target){
+		clearInterval(time);
+		time=setInterval(function(){
+			console.log(target);
+			let speed=(target-obj.offsetLeft)/10;
+			speed =  speed>0 ? Math.ceil(speed) : Math.floor(speed);//核心算法
+			obj.style.left=obj.offsetLeft+speed+"px";
+		},50);
+	}
+	
+	oBtn.onclick=function(){
+		go(oBox,800);
+	}
+</script>

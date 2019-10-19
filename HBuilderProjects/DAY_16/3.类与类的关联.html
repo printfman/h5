@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	class Birthday{
+		constructor(Y,M,D) {
+		    this.y=Y;
+			this.m=M;
+			this.d=D;
+		}
+		showValue(){
+			console.log(this.y,this.m,this.d);
+		}
+	}
+	class Person{//类的关联
+		constructor(Name,Age,Bir){
+			this.name=Name;
+			this.age=Age;
+			this.bir=Bir;
+		}
+		showValue(){
+			// console.log(this.name,this.age,this.bir.y,this.bir.m,this.bir.d);
+			bir.showValue();
+		}
+	}
+	let bir=new Birthday(2020,4,5);
+	let Bob=new Person("Bob",20,bir);
+	Bob.showValue();
+</script>

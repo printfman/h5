@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+		        margin: 0;
+		        padding: 0;
+		    }
+		    ul{
+		        height: 150px;
+		        width: 411px;
+		        position: relative;
+		        margin: 0 auto;
+		        background: yellow;
+		    }	
+		    ul li{
+		        width:40px;
+		        height:150px;
+		        list-style: none;
+		        overflow: hidden;
+		        border: 1px solid black;
+		        float: left;
+		    }
+		    img{
+		        background-size: 240px;
+		        height:150px;
+		        width:240px;
+		    }
+			#first{
+				width: 240px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+		    <li >
+		        <img src="images/1.jpg" >
+		    </li>
+		    <li>
+		        <img src="images/2.jpg" >
+		    </li>
+		    <li>
+		        <img src="images/3.jpg" >
+		    </li>
+		    <li>
+		        <img src="images/4.jpg" >
+		    </li>
+		    <li id="first">
+		        <img src="images/0.jpg" >
+		    </li>
+		</ul>
+	</body>
+</html>
+<script src="jQuery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	 $(function(){
+	 	$("li").mouseover(function(){
+	 		$(this).stop().animate({
+	 			width:240
+	 		}).siblings("li").stop().animate({
+	 			width:40
+	 		})		
+	 	});
+	 });
+// 	 $(function(){
+// 	 	$("li").mouseover(function(){
+// 	 		$(this).stop().animate({
+// 	 			width:240
+// 	 		}).siblings("li").stop().animate({
+// 	 			width:40
+// 	 		})		
+// 	 	});
+// 	 });
+</script>
+
+
+
+
