@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>购物车</title>
+		<link rel="shortcut icon" href="img/index.ico" />
+		<link rel="stylesheet" type="text/css" href="css/index2.css"/>
+		<link rel="stylesheet" href="css/shopCar.css">
+	</head>
+	<body>
+		<div class="head"></div>
+		<div class="login">
+			<div class="login_top"></div>
+			<div class="login_title">
+				<a href="#" class="login_number" >账号登录</a>
+				<a href="#" style="border-right: none;" class="login_ewm">扫码登录</a>
+			</div>
+			<div class="login_center">
+				<div class="id">
+					<form action="js/login.php" method="get">
+						<span class="login_ps"></span>
+						<input type="text" class="login_id" placeholder="手机号/邮件地址/华为号"><br>
+						<input type="text" class="login_pwd" placeholder="密码">
+						<span class="login_center_label">短信验证码登录</span>
+						<input type="submit" value="登录" class="login_center_send">
+						<input type="radio" class="login_center_rember"><span class="login_center_rember_label">记住华为账号</span><br>
+						<a class="login_center_register" href="register.html">注册账号</a>
+						<a href="#">忘记密码</a>
+					</form>
+				</div>
+				<div class="id2">
+					<img src="img/ewm.jpg" >
+					<p class="ewm_p">扫一扫立即登录~</p>
+				</div>
+			</div>
+		</div>
+		<div class="blank">
+			<div class="top">
+				<img src="img/logo.png" class="top_img">
+				<span class="top_title">我的购物车</span>
+				<hr class="top_hr">
+				<div class="big_circle">
+					<div class="small_circle">
+					</div>
+					<span class="labela">我的购物车</span>
+				</div>
+				<div class="small_circle2">
+					<span class="labelb">填写核对订单</span>
+				</div>
+				<div class="small_circle3">
+					<span class="labelc">成功提交订单</span>
+				</div>
+			</div>
+			
+		</div>
+		<div class="alert">
+			<span> 您还没有登录！登录后可查看之前加入的商品 </span>
+			<button type="button" class="shopcar_login">登录</button>
+		</div>
+		<main>
+			<img src="goodsinfo_img/shop_car.png" class="main_img">
+			<p class="main_ps">您的购物车里什么都没有哦~</p>
+			<a href="index.html" class="main_btn">去逛逛</a>
+			
+		</main>
+		<footer class="footer">
+			<div class="footer_top">
+				<ul>
+					<li class="footer_top_lia"></li><a href="#">百强企业 品质保证</a>
+					<li class="footer_top_lib"></li><a href="#">7天退货 15天换货</a>
+					<li class="footer_top_lic"></li><a href="#">48元起免运费</a>
+					<li class="footer_top_lid"></li><a href="#">1000家维修网点 全国联保</a>
+				</ul>
+			</div>
+			<div class="footer_center">
+				<div class="footer_center_left">
+					<ul>
+						<li class="footer_center_left_title"><a href="#">购物相关</a></li>
+						<li><a href="#">购物指南</a></li>
+						<li><a href="#">配送方式</a></li>
+						<li><a href="#">支付方式</a></li>
+						<li><a href="#">常见问题</a></li>
+					</ul>
+					<ul>
+						<li class="footer_center_left_title"><a href="#">保修与退换货</a></li>
+						<li><a href="#">保修政策</a></li>
+						<li><a href="#">退换货政策</a></li>
+						<li><a href="#">退换货流程</a></li>
+						<li><a href="#">保修状态查询</a></li>
+						<li><a href="#">配件防伪查询</a></li>
+					</ul>
+					<ul>
+						<li class="footer_center_left_title"><a href="#">维修与技术支持</a></li>
+						<li><a href="#">售后网点</a></li>
+						<li><a href="#">预约维修</a></li>
+						<li><a href="#">手机寄修</a></li>
+						<li><a href="#">备件价格查询</a></li>
+						<li><a href="#">上门服务</a></li>
+					</ul>
+					<ul>
+						<li class="footer_center_left_title"><a href="#">特色服务</a></li>
+						<li><a href="#">防伪查询</a></li>
+						<li><a href="#">补购保障</a></li>
+						<li><a href="#">以旧换新</a></li>
+						<li><a href="#">礼品包装</a></li>
+					</ul>
+					<ul>
+						<li class="footer_center_left_title"><a href="#">关于我们</a></li>
+						<li><a href="#">公司介绍</a></li>
+						<li><a href="#">华为商城简介</a></li>
+						<li><a href="#">华为线下门店</a></li>
+						<li><a href="#">荣耀线下门店</a></li>
+						<li><a href="#">诚征英才</a></li>
+						<li><a href="#">意见反馈</a></li>
+					</ul>
+					<ul>
+						<li class="footer_center_left_title"><a href="#">友情链接</a></li>
+						<li><a href="#">购物指南</a></li>
+						<li><a href="#">配送方式</a></li>
+						<li><a href="#">支付方式</a></li>
+						<li><a href="#">常见问题</a></li>
+					</ul>
+				</div>
+				<div class="footer_center_right">
+					<p>400-088-6888</p>
+					<span>7x24小时客服热线（仅收市话费）</span><br>
+					<button>在线客服</button><br>
+					<span>关注Vmall:</span><a href="#"></a>
+				</div>
+				<div class="clear">
+				</div>
+			</div>
+			<div class="footer_last">
+				<img src="images/logo_footer.png">
+				<span>华为集团
+					华为CBG官网
+					荣耀官网
+					花粉俱乐部
+					华为应用市场
+					EMUI
+					华为终端云空间
+					开发者联盟
+					华为商城手机版
+					网站地图
+					隐私声明 服务协议 COOKIES Copyright © 2012-2019 华为终端有限公司 版权所有 粤ICP备19015064号|粤公网安备 44190002003939号
+					增值电信业务经营许可证：粤B2-20190762|备案主体编号：44201919072182
+				</span>
+				<div class="clear">
+				</div>
+			</div>
+		</footer>
+		<aside>
+			<a href="#" id="aside_a"></a><p id="aside_pa">购物车</p>
+			<a href="#" id="aside_b"></a><p id="aside_pb">在线客服</p>
+			<a href="#" id="aside_c"></a><p id="aside_pc">意见反馈</p>
+		</aside>
+		<div class="mask">
+			
+		</div>
+	</body>
+</html>
+<script src="js/jQuery.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/弹出框插件.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/shopCar.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".head").load("index.html .blank_top",function(){
+			let oLi=document.querySelector(".more");
+			let oHide=document.querySelector(".hide");
+			let oa=document.querySelector(".more_a");
+			oLi.onmouseover=function(){
+				oHide.style.display="block";
+				oa.style.color="#CE0A2C";
+			}
+			oLi.onmouseout=function(){
+				oHide.style.display="none";
+				oa.style.color="";
+			}
+			let oLi_b=document.querySelector(".sever_li");
+			let oHide_b=document.querySelector(".server_hide");
+			let osever=document.querySelector(".server_a");
+			oLi_b.onmouseover=function(){
+				oHide_b.style.display="block";
+				osever.style.color="#CE0A2C";
+			}
+			oLi_b.onmouseout=function(){
+				oHide_b.style.display="none";
+				osever.style.color="";
+			}
+			let oCar=document.querySelector(".car");
+			let oShow_car=document.querySelector(".show_car");
+			let oCar_a=document.querySelector(".car_a");
+			oCar.onmouseover=function(){
+				oShow_car.style.display="block";
+				oCar_a.style.color="#CE0A2C";
+				this.style.backgroundColor="white";
+			}
+			oCar.onmouseout=function(){
+				oShow_car.style.display="none";
+				oCar_a.style.color="";
+				this.style.backgroundColor="";
+			}
+			let oul_phone_li=document.querySelector(".ul_phone_li");
+			let ul_phone=document.querySelector(".ul_phone");
+			let ul_phone_a=document.querySelector(".ul_phone_a");
+			oul_phone_li.onmouseover=function(){
+				ul_phone.style.display="block";
+				ul_phone_a.style.color="#CE0A2C";
+				this.style.backgroundColor="white";
+			}
+			oul_phone_li.onmouseout=function(){
+				ul_phone.style.display="none";
+				ul_phone_a.style.color="";
+				this.style.backgroundColor="";
+			}
+			let ologin_btn=document.querySelector(".login_btn");
+			let ologin=document.querySelector(".login");
+			let e= new PopPlugin(ologin);
+			ologin_btn.onclick=function(){
+				e.moveCenter();
+				e.close();
+			}
+		});
+		let ologin_id=document.querySelector(".login_id");
+		let ologin_ps=document.querySelector(".login_ps");
+		let ologin_pwd=document.querySelector(".login_pwd");
+		let ologin_center_send=document.querySelector(".login_center_send");	
+		ologin_id.onblur=function(){
+			var reg=/^\d{4,18}$/;
+			if(!reg.test(ologin_id.value)){
+				ologin_ps.innerHTML="！账号不低于4位数";
+			}else{
+					ologin_ps.innerHTML="";
+				}
+		}
+		//扫码登录
+			let ologin_ewm=document.querySelector(".login_ewm");
+			let oid=document.querySelector(".id");
+			let oid2=document.querySelector(".id2");
+			let ologin_number=document.querySelector(".login_number");
+			let ologin_center=document.querySelector(".login_center");
+			ologin_ewm.onclick=function(){
+				ologin_center.innerHTML=oid2.innerHTML;
+				ologin_ewm.style.color="#B40707";
+				ologin_number.style.color="black";
+			}
+			ologin_number.onclick=function(){
+				ologin_center.innerHTML=oid.innerHTML;
+				ologin_number.style.color="#B40707";
+				ologin_ewm.style.color="black";
+			}
+	});
+
+</script>

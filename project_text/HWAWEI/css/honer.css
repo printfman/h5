@@ -1,0 +1,79 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.clear{
+	clear:both;
+}
+.ul_top,.ul_bottom{
+	width: 1200px;
+	padding: 10px 50px;
+	border: 1px solid gainsboro;
+	margin: 0px auto;
+	box-sizing: border-box;
+}
+.ul_top{
+	margin-top: 30px;
+	border-bottom: none;
+}
+.ul_top li,.ul_bottom li{
+	display: inline-block;
+	margin: 0px 10px;
+}
+.ul_top li a,.ul_bottom li a{
+	font-size: 13px;
+	color: #595454;
+}
+.ul_top li a:hover{
+	color: #CF0A2C;
+}
+main{
+	width: 1200px;
+	margin: 0 auto;
+	margin: 50px auto;
+}
+.phone_box img{
+	width: 180px;
+	height: 180px;
+}
+.phone_box{
+	text-align: center;
+	float: left;
+	border: 1px solid gainsboro;
+	margin-right: 26px;
+}
+.phone_box:hover{
+	border: 1px solid #E01D20;
+}
+.phone_box_top{
+	padding: 30px 0px 0px 0px;
+    display: block;
+
+}
+.phone_box_title{
+	font-size: 12px;
+	margin: 20px 0px;
+}
+.phone_box_price{
+	color: #E01D20;
+	font-weight: 800;
+	font-size: 17px;
+}
+.ps_left,.ps_right{
+	margin-top: 20px;
+    float: left;
+    font-size: 14px;
+    text-align: center;
+        width: 108px;
+    height: 28px;
+    line-height: 28px;
+	border-top: 1px solid gainsboro;
+}
+.ps_left{
+	border-right: 1px solid gainsboro;
+}
+.ps_left:hover{
+	cursor: pointer;
+	background-color: #E01D20;
+	color: white;
+}
