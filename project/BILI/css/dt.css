@@ -1,0 +1,131 @@
+*{
+                    margin: 0;
+                    padding: 0;
+}
+html{
+                    font-size: 26.7vw;
+ }
+.con{
+                    padding: 0rem 0.1rem;
+}
+.title{
+                    text-align: center;
+                    font-size: 0.18rem;
+                    color: #FC8AAA;
+                    margin-top: 0.1rem;
+                  
+}
+.title i{
+                    position: absolute;
+                    background-image: url(/images/1_03.png);
+                    width: 0.28rem;
+                    height: 0.2rem;
+                    background-size: contain;
+                    right: 0.2rem;
+}
+.bgimg{
+                    width: 100%;
+                    height: 1.4rem;
+                    background-image: url(/images/QQ图片20191014192200_02.png);
+                    font-size: 0rem;
+                    background-size: contain;
+                    background-size: -0.3rem;
+                    background-position: 0rem -0.3rem;
+                    background-repeat: no-repeat;
+}
+.nav{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0rem;
+                    border: none;
+                    border-bottom: 0.1rem;
+}
+.nav .left_p{
+                    font-size: 0.15rem;
+                    font-weight: 600;
+
+}
+.nav .right_p{
+                    font-size: 0.15rem;
+                    color: gray;
+}
+.img_top{
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 0px;
+                    margin-top: 0.1rem;
+}
+.img_top i{
+                    width: 1.2rem;
+                    height: 0.7rem;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    
+}
+.i1{
+                    background-image: url(/images/QQ图片20191014192200_07.png);
+}
+.i2{
+                    background-image: url(/images/QQ图片20191014192200_05.png);
+}
+.i3{
+                    background-image: url(/images/QQ图片20191014192200_09.png);
+}
+.con_title{
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 0px;
+                    align-items: center;
+                    margin-top: 0.1rem;
+}
+.con_title_left{
+                    display: flex;
+                    justify-content: space-between;
+                   
+}
+.con_title_left i{
+                    width: 0.45rem;
+                    height: 0.45rem;
+                    background-image: url(/images/QQ图片20191014192200_14.png);
+                    background-size: contain;
+}
+.info{
+                    margin-left: 0.1rem;
+}
+.con_title_left p{
+                    margin-top: 0.02rem;
+                    font-size: 0.13rem;
+                    margin-bottom: 0.05rem;
+                    color: #FC8AAA;
+}
+.con_title_left span{
+                    font-size: 0.10rem;
+}
+.look{
+                    width: 0.5rem;
+                    height: 0.2rem;
+                    border: 0.01rem solid #FC8AAA;
+                    color: #FC8AAA;
+                    font-size: 0.1rem;
+                    border-radius: 0.1rem;
+                    text-align: center;
+                    line-height: 0.2rem;
+}
+.pa{
+                    margin: 0.1rem 0rem;
+                    font-size: 0.14rem;
+                    font-weight: 500;
+}
+.imgs{
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 0px;
+}
+.imgs i{
+      width: 1.1rem;
+     
+}
+.imgs i img{
+                    width: 100%;
+                    height: 100%;
+}
