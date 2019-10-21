@@ -22,17 +22,17 @@ html{
                     background-size: contain;
 }
 .img1{
-                    background-image: url(/images/QQ图片20191014162720_03.gif);
+                    background-image: url(../images/QQ图片20191014162720_03.gif);
 }
 .img2{
                     width: 0.28rem;
                     height: 0.4rem;
-                    background-image: url(/images/QQ图片20191014162720_05.gif);
+                    background-image: url(../images/QQ图片20191014162720_05.gif);
 }
 .img3{
                     width: 0.22rem;
                     height: 0.4rem;
-                    background-image: url(/images/QQ图片20191014162720_07.gif);
+                    background-image: url(../images/QQ图片20191014162720_07.gif);
                     background-position: center;
 }
 header input{
@@ -70,7 +70,7 @@ nav li:hover{
 }
 section{
                    margin: 0rem 0.2rem;
-                    background-image: url(/images/QQ图片20191014162720_16.gif);
+                    background-image: url(../images/QQ图片20191014162720_16.gif);
                     background-repeat: no-repeat;
                     height:1rem;
                     margin-top: 0.1rem;

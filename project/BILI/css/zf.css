@@ -8,14 +8,14 @@ html{
 .bgimg{
                     margin: 0.1rem 0.2rem;
                     height: 1.9rem;
-                    background-image: url(/images/QQ图片20191014192152_03.png);
+                    background-image: url(../images/QQ图片20191014192152_03.png);
                     background-size: contain;
                     background-repeat: no-repeat;
 }
 .bgimg2{
     margin: 0.1rem 0.2rem;
     height: 1.9rem;
-    background-image: url(/images/QQ图片20191014192507_03.png);
+    background-image: url(../images/QQ图片20191014192507_03.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
