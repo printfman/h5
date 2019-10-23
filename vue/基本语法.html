@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+  
+    <div id="app">
+           
+        <h1>{{users[0].name}} 我是默认值</h1>
+        <p>{{users[0].info}}</p>
+        <h1>{{users[1].name}}</h1>
+        <p>{{users[1].info}}</p>
+    </div>
+    <div id="txt">
+        <hello></hello>
+        我是默认值
+        <p></p>
+    </div>
+</body>
+
+</html>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+            //心法
+        /**
+         * 1. 忘记DOM,以数据为中心，数据变化 vue数据驱动界面
+         * 2. 以面向对象的方式进行页面分析
+         *    MVVM
+         *    VIEW (component) 视图如何定义
+         *    VIEWMODEL (a model of view) (7个参数，8个hooks 4个核心指令)
+         *
+         *    Model(vue中没有提供model的功能) fetch axios
+         *
+         *    1.创建一个view dom psd
+         *    2.根据view来抽象view的模型 viewmodel （属性，方法） html
+         *    3.根据分析的页面数据结构，构建出模拟数据结构 需求文档+ dom html
+         *    vue project = m(ajax) + v(component) + viewmodel(data(页面的数据结构),methods(页面的逻辑))
+         *
+         *    vue viewmodel公式(7属性（el,data,methods,computed,template...） 8hooks 4个指令)
+         *    view component
+         *    model 数据层
+         */
+    //render使用场合:根组件,尽量使用temlempent
+    (function () {
+        new Vue({
+            el: "#app",
+            data:{
+                users:[
+                    {
+                        name:"hello vue",
+                        info:"this is a happy thing"
+                    },
+                    {
+                        name:"hello node",
+                        info:"一言难尽"
+                    }
+                ]
+            }
+        });
+        new Vue({
+            el: "#txt",
+            template:"<h1>我是template，我会替换挂载点</h1>"
+        })
+    })()
+</script>

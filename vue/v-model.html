@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 表单绑定指令 -->
+    <!-- 监听input/change,更新数据模型data -->
+        <div id="app">
+           <h2>用户注册</h2>
+           用户名:<input v-model="userInfo.username" type="text">
+          注册： <input v-model="userInfo.password" type="password">
+          <button @click="show">click me</button>
+          {{userInfo}}
+        </div>
+</body>
+</html>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    (function(){
+        new Vue({
+            el:"#app",
+            data:{
+                userInfo:{
+                    username:"xx",
+                    password:""
+                }
+            },
+            //method组织逻辑/时间响应方法
+            methods:{
+                show(){
+                    //引用data数据
+                    console.log(this.userInfo);
+                }
+            }
+            
+        })
+    })()
+
+</script>
