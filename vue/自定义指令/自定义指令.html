@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- W3C自定义属性dateset -->
+    <!-- data-a=“asd” -->
+    <!-- draggable=“true” h5新加拖拽事件 -->
+    <!-- 扩展属性名 -->
+    <!-- 扩展事件 -->
+    <!-- <div id="app" drag="">
+        <div v-bg="'red'">
+            eg
+        </div>
+        <div v-bg="'green'">
+            eg
+        </div>
+    </div>
+</body>
+</html>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    (function(){
+        new Vue({
+            el:"#app",
+            data:{
+                
+            },
+            //自定义指令
+            directives:{
+                //el:位置
+                //binding:内容
+                bg:function(el,binding){
+                    el.style.backgroundColor=binding.value;
+                }
+            }
+            
+        })
+    })() -->
+
+    <div id="app">
+        <div v-drag style="width: 300px;height: 200px;background-color: green;"></div>
+       
+    </div>
+</body>
+</html>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    (function(){
+        //全局自定义指令
+        Vue.directive("drag",function(el,binding){
+            el.onmousedown=function(e){
+                        el.style.position="absolute";
+                        let sx=e.clientX-el.offsetLeft;
+                        let sy=e.clientY-el.offsetTop;
+                        document.onmousemove=function(e){
+                            el.style.left=e.clientX-sx+"px";
+                            el.style.top=e.clientY-sy+"px";
+                        }
+                        el.onmouseup=function(){
+                            document.onmousemove=null;
+                            el.onmouseup=null;
+                        }
+                    }
+        })
+
+        new Vue({
+            el:"#app",
+            data:{
+                
+            },
+            //自定义指令
+            directives:{
+                //el:位置
+                //binding:内容
+                //局部指令
+                // drag:function(el,binding){
+                //     el.onmosedown=function(e){
+                //         el.style.position="absolute";
+                //         let sx=e.clientX-el.offsetLeft;
+                //         let sy=e.clientY-el.offsetTop;
+                //         document.onmosemove=function(e){
+                //             el.style.left=e.clientX-sx+"px";
+                //             el.style.top=e.clientY-sy+"px";
+                //         }
+                //         el.onmoseup=function(){
+                //             document.onmosemove=null;
+                //             el.onmoseup=null;
+                //         }
+                //     }
+                // }
+            }
+            
+        })
+    })()
+
+</script>

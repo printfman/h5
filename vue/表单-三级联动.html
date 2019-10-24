@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 属性指令 -->
+        <div id="app">
+            <h1>用户注册</h1>
+            用户名<input type="text" v-model="user.username"><br>
+            密码<input type="password" v-model="user.pwd"><br>
+            性别<input type="radio" name=“sex” value="男" v-model="user.sex">男
+            <input type="radio" name=“sex” value="女" v-model="user.sex">女<br>
+            爱好:<input type="checkbox" v-model="user.hobby" value="movie">看电影
+            <input type="checkbox" v-model="user.hobby" value="code">敲代码
+            <br>
+            地址
+            <select v-model="user.address.p">
+                    <option :value="p" v-for="p in addrs">{{p.province}}</option>
+            </select>
+            
+            <select v-model="user.address.c">
+                    <option :value="c" v-for="c in user.address.p.cities">{{c.city}}</option>
+            </select>
+            <select v-model="user.address.a">
+                    <option :value="a" v-for="a in user.address.c.areas">{{a.area}}</option>
+            </select>
+            <br><br>
+            介绍:
+            <textarea cols="30" rows="10" v-model="user.profile"></textarea>
+            <br><br><button @click=show>注册</button>
+            {{user}}
+            <h3></h3>
+        </div>
+</body>
+</html>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    (function(){
+       new Vue({
+            el:"#app",
+            methods:{
+                show(){
+                    console.log(this.user);
+                }
+                
+            },
+            data:{
+                addrs:[
+                    {
+                        province:"陕西省",
+                        cities:[
+                            {
+                                city:"西安",
+                                areas:[
+                                    {
+                                        area:"高新区"
+                                    },
+                                    {
+                                        area:"长安区"
+                                    },
+                                ]
+                            },
+                            {
+                                city:"咸阳",
+                                areas:[
+                                    {
+                                        area:"咸阳区1"
+                                    },
+                                    {
+                                        area:"咸阳区2"
+                                    },
+                                ]
+                            }
+
+                            
+                        ]
+                    },
+                    {
+                        province:"甘肃省",
+                        cities:[
+                            {
+                                city:"兰州",
+                                areas:[
+                                    {
+                                        area:"兰州区1"
+                                    },
+                                    {
+                                        area:"兰州区2"
+                                    },
+                                ]
+                            },
+                            {
+                                city:"天水",
+                                areas:[
+                                    {
+                                        area:"天水区1"
+                                    },
+                                    {
+                                        area:"天水区2"
+                                    },
+                                ]
+                            }
+
+                            
+                        ]
+                    }
+                ],
+                user:{
+                    username:"",
+                    pwd:"",
+                    sex:"",
+                    hobby:[],
+                    address:{
+                        p:"",
+                        c:"",
+                        a:""
+                    },
+                    profile:""
+                }
+            }
+            
+        })
+       
+    })()
+
+</script>

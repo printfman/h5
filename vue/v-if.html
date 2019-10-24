@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    [v-cloak]{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+  
+    <div id="app" v-cloak>
+        <a @click="flag=true">新闻</a>
+        <a @click="flag=false">电影</a>
+        <hr>
+        <div v-if="flag">
+            <h1>新闻</h1>
+        </div>
+        <div v-else>
+            <h1>电影</h1>
+        </div>
+        <hr>
+        您选择的课程是:
+        <select v-model="course">
+            <option value="vue">vue</option>
+            <option value="angular">angular</option>
+        </select>
+        <ul>
+            <li v-if="course=='vue'">vue</li>
+            <li v-else-if="course=='angular'">angular</li>
+            <li v-else>react</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    (function(){
+        new Vue({
+            el:"#app",
+            data:{
+                flag:true,
+                course:"vue"
+            }
+            
+        })
+    })()
+
+</script>

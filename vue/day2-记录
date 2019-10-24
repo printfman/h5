@@ -1,12 +1,20 @@
-Vue双向绑定实现的机制
+1.安装vue
+npm install bower
+npm install vue
 
-1.publish subscribe
-2.数据劫持:data: set get
-2.5.0
-Object.defineProperty("",{
-  set:
-  get:
-})
+2.框架:MVVM
+VUE公式:Product=M(ajax)+v(component)+VM(data,method)
+注意:vm:通过数据劫持，解决dom元素
+
+
+3.Vue双向绑定实现的机制
+  1.publish subscribe(订阅和发布模式)
+  2.数据劫持:data: set get
+  2.5.0
+  Object.defineProperty("",{
+    set:
+    get:
+  })
 
 es6 Proxy 2.6
 
@@ -27,3 +35,11 @@ page1 location.href
 
 在移动端
 http->tcp->req res -》 static dom -> img video
+
+
+七个参数:
+el:指定挂载位置  底层绑定(vm.$mount("#app"))
+data:数据会被viev拦截(dirty checking：脏值检查),观察者模式,自动给数据结构加一个watcher(双向绑定)
+method:事件响应的方法集合(业务)
+template(模板) 字符串创建转为render
+render  通过对象创建
